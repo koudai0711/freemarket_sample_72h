@@ -2,74 +2,74 @@
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   text-align: center;
   background: whitesmoke;
-    section{
-      background: white;
-      width: 700px;
-      margin: 0 auto;
-      h2{
-        padding-top: 20px;
-      }
-      form{
-        padding: 0 16px 40px 4px;
-        .l-single-content{display: block;
-          max-width: 343px;
-          margin: 0 auto;
-          .form-group{
-            margin: 24px 0 0;
-            label{
-              font-weight: 600;
-              font-size: 14px;
+  section{
+    background: white;
+    width: 700px;
+    margin: 0 auto;
+    h2{
+      padding-top: 20px;
+    }
+    form{
+      padding: 0 16px 40px 4px;
+      .l-single-content{display: block;
+        max-width: 343px;
+        margin: 0 auto;
+        .form-group{
+          margin: 24px 0 0;
+          label{
+            font-weight: 600;
+            font-size: 14px;
+          }
+          span{
+            background: #3CCACE;
+            color: white;
+            padding: 2px 4px;
+            margin: 0 0 0 8px;
+            font-size: 12px;
+            border-radius: 2px;
+          }
+          input{
+            height: 48px;
+            width: 80%;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          .input-default.half{
+            height: 48px;
+            width: 35%;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            line-height: 1.5;
             }
-            span{
-              background: #3CCACE;
-              color: white;
-              padding: 2px 4px;
-              margin: 0 0 0 8px;
-              font-size: 12px;
-              border-radius: 2px;
-            }
-            input{
-              height: 48px;
-              width: 80%;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              font-size: 16px;
-              line-height: 1.5;
-            }
-            .input-default.half{
-              height: 48px;
-              width: 35%;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              font-size: 16px;
-              line-height: 1.5;
-            }
-            .input-default.quarter{
-              height: 48px;
-              width: 19%;
-              padding: 10px 16px 8px;
-              border-radius: 4px;
-              border: 1px solid #ccc;
-              font-size: 16px;
-              line-height: 1.5;
-            }
+          .input-default.quarter{
+            height: 48px;
+            width: 19%;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            line-height: 1.5;
           }
         }
-        .l-single-content{
-          button{
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          text-align: center;
-          margin: 70px 0 0;
-          background: #3CCACE;
-          border: 1px solid #3CCACE;
-          color: white;
-          }
+      }
+      .l-single-content{
+        button{
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        text-align: center;
+        margin: 70px 0 0;
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        color: white;
         }
       }
     }
+  }
 }
