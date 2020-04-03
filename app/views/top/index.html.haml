@@ -17,7 +17,6 @@
       .nav
          %ul.listsLeft
             %li.listsLeft__item.listsLeft__item--first
-               -# %a#catBtn{href: "#"} カテゴリー
                = link_to "カテゴリー", "#", class: "catBtn"
                .tree.displayNone
                   %ul.categoryTree
@@ -60,27 +59,22 @@
 .breadCrumbs
    %ul.breadCrumbs-lists
       %li.lists-first
-         -# %a{href: "#"} FURIMA
          = link_to "FURIMA", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-second
-         -# %a{href: "#"} メンズ
          = link_to "メンズ", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-third
-         -# %a{href: "#"} ジャケット/アウター
          = link_to "ジャケット/アウター", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-forth 
-         -# %a{href: "#"} ノーカラージャケット
          = link_to "ノーカラージャケット", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-fifth
-         -# %a{href: "#"} Product
          = link_to "Product", "#"
 
 .main 
@@ -117,7 +111,6 @@
                   %tr
                   %th カテゴリー
                   %td
-                     -# %a{href: "#"} メンズ
                      = link_to "メンズ","#"
                      %br/
                      = link_to "ジャケット/アウター", "#"
@@ -170,20 +163,17 @@
             
    %ul.links
       %li.left
-         -# %a{href: "#"}
          = link_to "#" do
             %i.fa.fa-angle-left
             %span
             前の商品
       %li.right
-         -# %a{href: "#"}
          = link_to "#" do
             %span 後ろの商品
             %i.fa.fa-angle-right
 
 
    .relatedItems
-      -# %a{href: "#"} メンズをもっと見る
       = link_to "メンズをもっと見る", "#" 
       .productLists
 
