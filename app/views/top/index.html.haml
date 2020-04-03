@@ -1,22 +1,24 @@
+
 %header.pcHeader
    .headerInner
       .mainHeader
          %h1.icon
-            %a{href: "/"}
-               %img{src: "/assets/logo.png", class: "image"}/
+            %span.image
+               = image_tag "/assets/logo.png", class: "image-logo"
          .searchBox
             %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
                %input{name: "utf8", type: "hidden", value: "✓"}/
                %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
                %button{type: "submit"}
-                  .searchBox__icon
-                     %img{src:  "/assets/icon-search 1.png", class: "image"}/
+                  %span.image
+                     = image_tag "/assets/icon-search 1.png", class: "image"
                   %input{name: "authenticity_token", type: "hidden", value: "EQAv/S2rsDeHLoEo0kvb8hCULr0aZqsDDDY9yAzJ7ka+IJjgqdcq02xFyskZAQGb+80qKeJTa3Y4QzPFlX3wNQ=="}/
          %ul.resultLists
       .nav
          %ul.listsLeft
             %li.listsLeft__item.listsLeft__item--first
-               %a#catBtn{href: "#"} カテゴリー
+               -# %a#catBtn{href: "#"} カテゴリー
+               = link_to "カテゴリー", "#", class: "catBtn"
                .tree.displayNone
                   %ul.categoryTree
                      %li.categoryTree--item
@@ -46,35 +48,40 @@
                      %li.categoryTree--item
                      %a#13{href: "#"} その他
             %li.listsLeft__item
-               %a#brandBtn{href: "#"} ブランド 
+               = link_to "ブランド", "#",class: "brandBtn"
                %ul.brandsPulldown.displayNone
          %ul.listsRight
             %li.listsRight__item.listsRight__item--login
-               %a{href: "#"} ログイン
+               = link_to "ログイン", "#"
             %li.listsRight__item.listsRight__item--new
-               %a{href: "#"} 新規会員登録
+               = link_to "新規会員登録", "#"
 
    
 .breadCrumbs
    %ul.breadCrumbs-lists
       %li.lists-first
-         %a{href: "#"} FURIMA
+         -# %a{href: "#"} FURIMA
+         = link_to "FURIMA", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-second
-         %a{href: "#"} メンズ
+         -# %a{href: "#"} メンズ
+         = link_to "メンズ", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-third
-         %a{href: "#"} ジャケット/アウター
+         -# %a{href: "#"} ジャケット/アウター
+         = link_to "ジャケット/アウター", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-forth 
-         %a{href: "#"} ノーカラージャケット
+         -# %a{href: "#"} ノーカラージャケット
+         = link_to "ノーカラージャケット", "#"
       %li
          %i.fa.fa-angle-right
       %li.lists-fifth
-         %a{href: "#"} Product
+         -# %a{href: "#"} Product
+         = link_to "Product", "#"
 
 .main 
    .main__content
@@ -83,17 +90,17 @@
          product
       .main__content-image
          %span.image
-            = image_tag src="/assets/main.png", size: "560x346"
+            = image_tag "/assets/Product_Details/main.png", size: "560x346"
          .content-image-small
             .small-left
                %span.image
-                  = image_tag src="/assets/left.png", size: "140x87"
+                  = image_tag "/assets/Product_Details/left.png", size: "140x87"
             .small-center
                %span.image
-                  = image_tag src="/assets/center.png", size: "140x87"
+                  = image_tag "/assets/Product_Details/center.png", size: "140x87"
             .small-right
                %span.image
-                  = image_tag src="/assets/right.png", size: "140x87"
+                  = image_tag "/assets/Product_Details/right.png", size: "140x87"
       .main__content-price
          .content-price-sellingPrice
             ¥20000
@@ -110,12 +117,13 @@
                   %tr
                   %th カテゴリー
                   %td
-                     %a{href: "#"} メンズ
+                     -# %a{href: "#"} メンズ
+                     = link_to "メンズ","#"
                      %br/
-                     %a{href: "#"} ジャケット/アウター
+                     = link_to "ジャケット/アウター", "#"
                      %br/
-                     %a{href: "#"} ノーカラージャケット
-                     %tr
+                     = link_to "ノーカラージャケット", "#"                     
+                  %tr
                   %th ブランド
                   %td
                   %tr
@@ -141,7 +149,7 @@
                      お気に入り 0
                %ul.optional
                   %li.optionalBtn
-                     %a{href: "#"}
+                     = link_to "#"
                      %i.fa.fa-flag
                      不適切な商品の通報
 
@@ -162,18 +170,21 @@
             
    %ul.links
       %li.left
-         %a{href: "#"}
+         -# %a{href: "#"}
+         = link_to "#" do
             %i.fa.fa-angle-left
             %span
             前の商品
       %li.right
-         %a{href: "#"}
+         -# %a{href: "#"}
+         = link_to "#" do
             %span 後ろの商品
             %i.fa.fa-angle-right
 
 
    .relatedItems
-      %a{href: "#"} メンズをもっと見る
+      -# %a{href: "#"} メンズをもっと見る
+      = link_to "メンズをもっと見る", "#" 
       .productLists
 
    %aside.appBanner
@@ -181,41 +192,40 @@
          %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
          %p.inner__text 今すぐ無料ダウンロード！
          .inner__icon
-            %a{href: "#"}
-            %img.linkIcon.aBtn{src: "/assets/app-store.png"}
-            
-            %a{href: "#"}
-            %img.linkIcon.gBtn{src: "/assets/google-play-badge"}
+            %span.image
+               = image_tag "/assets/app-store.png", class: "aBtn"
+            %span.image
+               = image_tag "/assets/google-play-badge.png", class: "gBtn"
    .footer
       %ul.contents
          %li.content
             %h2.content__head FURIMAについて
             %ul
                %li
-                  %a{href: "#"} 会社概要（運営会社）
+                  = link_to "会社概要(運営会社)", "#"
                %li
-                  %a{href: "#"} プライバシーポリシー
+                  = link_to "プライバシーポリシー", "#"
                %li
-                  %a{href: "#"} FURIMA利用規約
+                  = link_to "FURIMA利用規約","#"
                %li
-                  %a{href: "#"} ポイントに関する特約
+                  = link_to "ポイントに関する特約", "#"
          %li.content
             %h2.content__head FURIMAを見る
             %ul
                %li
-                  %a{href: "#"} カテゴリー一覧
+                  = link_to "カテゴリー一覧", "#"
                %li
-                  %a{href: "#"} ブランド一覧
+                  = link_to "ブランド一覧", "#" 
          %li.content
             %h2.content__head ヘルプ＆ガイド
             %ul
                %li
-                  %a{href: "#"} FURIMAガイド
+                  = link_to "FURIMAガイド", "#"
                %li
-                  %a{href: "#"} FURIMAロゴ利用ガイドライン
+                  = link_to "FURIMAロゴ利用ガイドライン", "#"
                %li
-                  %a{href: "#"} お知らせ
+                  = link_to "お知らせ", "#"
       .footer__logo
-         %a{href: "/"}
-            %img{src: "/assets/logo-white.png", class: "footerLogo"}/
+         %span.image
+            = image_tag "/assets/logo-white.png", class: "footerLogo"
       %p © FURIMA
