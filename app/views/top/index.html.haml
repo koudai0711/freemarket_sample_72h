@@ -2,57 +2,57 @@
    .headerInner
       .mainHeader
          %h1.icon
-            %a{:href => "/"}
+            %a{href: "/"}
                %img{src: "/assets/logo.png", class: "image"}/
          .searchBox
-            %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
-               %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-               %input#searchInput.searchBox--input{:name => "key", :placeholder => "キーワードから探す"}/
+            %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
+               %input{name: "utf8", type: "hidden", value: "✓"}/
+               %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
                %button{type: "submit"}
                   .searchBox__icon
                      %img{src:  "/assets/icon-search 1.png", class: "image"}/
-                  %input{:name => "authenticity_token", :type => "hidden", :value => "EQAv/S2rsDeHLoEo0kvb8hCULr0aZqsDDDY9yAzJ7ka+IJjgqdcq02xFyskZAQGb+80qKeJTa3Y4QzPFlX3wNQ=="}/
+                  %input{name: "authenticity_token", type: "hidden", value: "EQAv/S2rsDeHLoEo0kvb8hCULr0aZqsDDDY9yAzJ7ka+IJjgqdcq02xFyskZAQGb+80qKeJTa3Y4QzPFlX3wNQ=="}/
          %ul.resultLists
       .nav
          %ul.listsLeft
             %li.listsLeft__item.listsLeft__item--first
-               %a#catBtn{:href => "#"} カテゴリー
+               %a#catBtn{href: "#"} カテゴリー
                .tree.displayNone
                   %ul.categoryTree
                      %li.categoryTree--item
-                     %a#1{:href => "#"} レディース
+                     %a#1{href: "#"} レディース
                      %li.categoryTree--item
-                     %a#2{:href => "#"} メンズ
+                     %a#2{href:"#"} メンズ
                      %li.categoryTree--item
-                     %a#3{:href => "#"} ベビー・キッズ
+                     %a#3{href:"#"} ベビー・キッズ
                      %li.categoryTree--item
-                     %a#4{:href => "#"} インテリア・住まい・小物
+                     %a#4{href: "#"} インテリア・住まい・小物
                      %li.categoryTree--item
-                     %a#5{:href => "#"} 本・音楽・ゲーム
+                     %a#5{href: "#"} 本・音楽・ゲーム
                      %li.categoryTree--item
-                     %a#6{:href => "#"} おもちゃ・ホビー・グッズ
+                     %a#6{href: "#"} おもちゃ・ホビー・グッズ
                      %li.categoryTree--item
-                     %a#7{:href => "#"} コスメ・香水・美容
+                     %a#7{href: "#"} コスメ・香水・美容
                      %li.categoryTree--item
-                     %a#8{:href => "#"} 家電・スマホ・カメラ
+                     %a#8{href: "#"} 家電・スマホ・カメラ
                      %li.categoryTree--item
-                     %a#9{:href => "#"} スポーツ・レジャー
+                     %a#9{href: "#"} スポーツ・レジャー
                      %li.categoryTree--item
-                     %a#10{:href => "#"} ハンドメイド
+                     %a#10{href: "#"} ハンドメイド
                      %li.categoryTree--item
-                     %a#11{:href => "#"} チケット
+                     %a#11{href: "#"} チケット
                      %li.categoryTree--item
-                     %a#12{:href => "#"} 自動車・オートバイ
+                     %a#12{href: "#"} 自動車・オートバイ
                      %li.categoryTree--item
-                     %a#13{:href => "#"} その他
+                     %a#13{href: "#"} その他
             %li.listsLeft__item
-               %a#brandBtn{:href => "#"} ブランド 
+               %a#brandBtn{href: "#"} ブランド 
                %ul.brandsPulldown.displayNone
          %ul.listsRight
             %li.listsRight__item.listsRight__item--login
-               %a{:href => "#"} ログイン
+               %a{href: "#"} ログイン
             %li.listsRight__item.listsRight__item--new
-               %a{:href => "#"} 新規会員登録
+               %a{href: "#"} 新規会員登録
 
    
 .breadCrumbs
@@ -110,11 +110,11 @@
                   %tr
                   %th カテゴリー
                   %td
-                     %a{:href => "#"} メンズ
+                     %a{href: "#"} メンズ
                      %br/
-                     %a{:href => "#"} ジャケット/アウター
+                     %a{href: "#"} ジャケット/アウター
                      %br/
-                     %a{:href => "#"} ノーカラージャケット
+                     %a{href: "#"} ノーカラージャケット
                      %tr
                   %th ブランド
                   %td
@@ -130,7 +130,7 @@
                   %tr
                   %th 発送元の地域
                   %td 
-                     %a{:href => "#"} 青森県
+                     %a{href: "#"} 青森県
                   %tr 
                   %th 発送日の目安
                   %td 1~2で発送
@@ -141,39 +141,39 @@
                      お気に入り 0
                %ul.optional
                   %li.optionalBtn
-                     %a{:href => "#"}
+                     %a{href: "#"}
                      %i.fa.fa-flag
                      不適切な商品の通報
 
    .commentBox
       %ul.commentContents
-      %form#new_comment.new_comment{"accept-charset" => "UTF-8", :action => "#", :method => "post"}
-         %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-         %input{:name => "authenticity_token", :type => "hidden", :value => "Lwoak/fp9+5jANMjNlV55oYIn+hR50rvCnw7PzDGcbKAKq2Oc5VtCohrmML9H6OPbVGbfKnSipo+CTUyqXJvwQ=="}/
-         %textarea#comment_body{:name => "comment[body]", :required => "required"}
+      %form#new_comment.new_comment{"accept-charset" => "UTF-8", action: "#", method: "post"}
+         %input{name: "utf8", type: "hidden", value: "✓"}/
+         %input{name: "authenticity_token", type: "hidden", value: "Lwoak/fp9+5jANMjNlV55oYIn+hR50rvCnw7PzDGcbKAKq2Oc5VtCohrmML9H6OPbVGbfKnSipo+CTUyqXJvwQ=="}/
+         %textarea#comment_body{name: "comment[body]", required: "required"}
          %p.noticeMsg
             相手のことを考え丁寧なコメントを心がけましょう。
             %br/
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
          %br/
-         %button.commentBtn{:name => "button", :type => "submit"}
+         %button.commentBtn{name:  "button", type: "submit"}
             %i.fa.fa-comment
             コメントする
             
    %ul.links
       %li.left
-         %a{:href => "#"}
+         %a{href: "#"}
             %i.fa.fa-angle-left
             %span
             前の商品
       %li.right
-         %a{:href => "#"}
+         %a{href: "#"}
             %span 後ろの商品
             %i.fa.fa-angle-right
 
 
    .relatedItems
-      %a{:href => "#"} メンズをもっと見る
+      %a{href: "#"} メンズをもっと見る
       .productLists
 
    %aside.appBanner
@@ -181,41 +181,41 @@
          %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
          %p.inner__text 今すぐ無料ダウンロード！
          .inner__icon
-            %a{:href => "#"}
-            %img.linkIcon.aBtn{:src => "/assets/app-store.png"}
+            %a{href: "#"}
+            %img.linkIcon.aBtn{src: "/assets/app-store.png"}
             
-            %a{:href => "#"}
-            %img.linkIcon.gBtn{:src => "/assets/google-play-badge"}
+            %a{href: "#"}
+            %img.linkIcon.gBtn{src: "/assets/google-play-badge"}
    .footer
       %ul.contents
          %li.content
             %h2.content__head FURIMAについて
             %ul
                %li
-                  %a{:href => "#"} 会社概要（運営会社）
+                  %a{href: "#"} 会社概要（運営会社）
                %li
-                  %a{:href => "#"} プライバシーポリシー
+                  %a{href: "#"} プライバシーポリシー
                %li
-                  %a{:href => "#"} FURIMA利用規約
+                  %a{href: "#"} FURIMA利用規約
                %li
-                  %a{:href => "#"} ポイントに関する特約
+                  %a{href: "#"} ポイントに関する特約
          %li.content
             %h2.content__head FURIMAを見る
             %ul
                %li
-                  %a{:href => "#"} カテゴリー一覧
+                  %a{href: "#"} カテゴリー一覧
                %li
-                  %a{:href => "#"} ブランド一覧
+                  %a{href: "#"} ブランド一覧
          %li.content
             %h2.content__head ヘルプ＆ガイド
             %ul
                %li
-                  %a{:href => "#"} FURIMAガイド
+                  %a{href: "#"} FURIMAガイド
                %li
-                  %a{:href => "#"} FURIMAロゴ利用ガイドライン
+                  %a{href: "#"} FURIMAロゴ利用ガイドライン
                %li
-                  %a{:href => "#"} お知らせ
+                  %a{href: "#"} お知らせ
       .footer__logo
-         %a{:href => "/"}
+         %a{href: "/"}
             %img{src: "/assets/logo-white.png", class: "footerLogo"}/
       %p © FURIMA
