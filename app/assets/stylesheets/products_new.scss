@@ -1,0 +1,32 @@
+.input{
+  width: 100vw;
+  height: 100vh;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    .logoHeader {
+      background-color: #f8f8f8;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      align-items: center;
+      display: flex;
+      height: 56px;
+      justify-content: center;
+      .logoArea {
+        .headerLogo {
+          height: 49px;
+          margin: 0 auto;
+        }
+      }
+    }
+    .inputArea {
+      max-width: 700px;
+      background-color: #f8f8f8;
+      
+      &__input {
+        position: relative;
+      }
+    }
+  }
+}
