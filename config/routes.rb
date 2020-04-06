@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :top
   resources :product 
+  resources :registrations
+  resources :sessions
 end
