@@ -61,23 +61,39 @@
             .inputArea__input_details_third_alert 必須
           .inputArea__input_details_form
 
-        -# .input_details
-        -#   .input_details_top
-        -#     配送について
-        -#   .details_first
-        -#     配送料の負担
-        -#     .details_first__alert 必須
-        -#   .details_first_form
-
-        -#   .details_second
-        -#     発送元の地域
-        -#     .details_second__alert 必須
-        -#   .details_second_form  
-
-        -#   .details_third
-        -#     発送までの日数
-        -#     .details_third__alert 必須
-        -#   .details_second_form
-
-     
+        .inputArea__input_priceArea
+          .inputArea__input_priceArea_top
+            価格 (￥300~9,999,999)
+          .inputArea__input_priceArea_price
+            販売価格
+            .inputArea__input_priceArea_price_alert　必須
+            .inputArea__input_priceArea_price_form
+          .inputArea__input_priceArea_charge
+            販売手数料(10%)
+          .inputArea__input_priceArea_profit
+            販売利益
+          .inputArea__input_priceArea_button
+            .inputArea__input_priceArea_button_submit 
+              出品する
+            .inputArea__input_priceArea_button_draft
+              下書きに保存する
+            .inputArea__input_priceArea_button_back
+              もどる
+          .inputArea__input_priceArea_caution
+            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+        .copyright 
+          .copyright_policy
+            .copyright_policy_blank
+            .copyright_policy_privacy
+              プライバシーポリシー 
+            .copyright_policy_terms
+              メルカリ利用規約
+            .copyright_third_notation
+              特定商取引に関する表記
+          .copyright_logo
+            %span.image
+              = image_tag "/assets/logo-white.png", class: "copyright_logo"
+          .copyright_font
+            &copy; Team H ,inc
+        
         
