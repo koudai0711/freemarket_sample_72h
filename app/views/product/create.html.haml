@@ -1,0 +1,76 @@
+.input
+  .input__main
+    .logoHeader 
+      .logoArea
+        %span
+          = link_to "" do
+            = image_tag "/assets/material/logo/logo.png", class: "headerLogo"
+    .inputArea
+      .inputArea__input
+        .inputArea__input_title
+          %h2.inputArea__input_title_text
+            購入内容の確認
+        .inputArea__input_product
+          .inputArea__input_product_area
+            .inputArea__input_product_area_image
+              = image_tag "/assets/material/pict/IMG_8870.JPG", class: "headerLogo", size:"80x80"
+            .inputArea__input_product_area_text
+              .inputArea__input_product_area_text_name
+                ELENDEEK
+              .inputArea__input_product_area_text_price
+                ¥7,000 
+                %span （税込）送料込み
+        .inputArea__input_details
+          .inputArea__input_details_box
+            %ul.inputArea__input_details_box_inner
+              %li.inputArea__input_details_box_inner_price
+                .inputArea__input_details_box_inner_price_text
+                  支払い金額
+                .inputArea__input_details_box_inner_price_value
+                  ¥7,000
+              %li.inputArea__input_details_box_inner_point
+                =check_box_tag :check1
+                =label_tag :check1, "ポイントを使用 (所持ポイント: P0)",class: "text"
+              %li.inputArea__input_details_box_inner_card
+                .inputArea__input_details_box_inner_card_content
+                  .inputArea__input_details_box_inner_card_content_text
+                    支払い方法
+                  .inputArea__input_details_box_inner_card_content_change
+                    = link_to "変更する","#"
+                .inputArea__input_details_box_inner_card_date
+                  クレジットカード
+                  %br/
+                  ************7328
+                  %br/
+                  有効期限 07 / 24
+                .inputArea__input_details_box_inner_card_visa
+                  = image_tag "/assets/logo-white.png", class: "copyright_logo",size:"49x15"
+              %li.inputArea__input_details_box_inner_address
+                .inputArea__input_details_box_inner_address_content
+                  .inputArea__input_details_box_inner_address_content_text
+                    配送先
+                  .inputArea__input_details_box_inner_address_content_change
+                    = link_to "変更する","#"
+                .inputArea__input_details_box_inner_address_date
+                  〒216-0001
+                  %br/
+                  神奈川県 川崎市宮前区 
+                  %br/
+                  森下 幸大
+              %li.inputArea__input_details_box_inner_btn
+                .inputArea__input_details_box_inner_btn_submit 
+                  購入する
+    .copyright 
+      .copyright_policy
+        .copyright_policy_blank
+          .copyright_policy_blank_privacy
+            プライバシーポリシー 
+          .copyright_policy_blank_terms
+            メルカリ利用規約
+          .copyright_third_blank_notation
+            特定商取引に関する表記
+      .copyright_logo
+        %span.image
+          = image_tag "/assets/logo-white.png", class: "copyright_logo"
+      .copyright_font
+        &copy; Team H ,inc
