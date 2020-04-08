@@ -4,96 +4,110 @@
       .logoArea
         %span
           = image_tag "/assets/material/logo/logo.png", class: "headerLogo"
-    .inputArea
-      .inputArea__input
-        .inputArea__input_imageArea
-          .inputArea__input_imageArea_top 
-            出品画像
-            .inputArea__input_imageArea_top_alert 必須
-          .inputArea__input_imageArea_describe 最大10枚までアップロードできます
-          .inputArea__input_imageArea_form
+    = form_for @product do |f|
+      .inputArea
+        .inputArea__input
+          .inputArea__input_imageArea
+            .inputArea__input_imageArea_top 
+              出品画像
+              .inputArea__input_imageArea_top_alert 必須
+            .inputArea__input_imageArea_describe 最大10枚までアップロードできます
+            .inputArea__input_imageArea_form
+            
+          .inputArea__input_productArea
+            .inputArea__input_productArea_name
+              商品名
+              .inputArea__input_productArea_name_alert 必須
+            .inputArea__input_productArea_form__group
+              = f.text_field :name, class: "productName", placeholder: "    40文字まで" #nameカラムのデータとして送る
+            .inputArea__input_productArea_describe
+              商品の説明
+              .inputArea__input_productArea_describe_alert 必須
+            .inputArea__input_productArea_form__describe
+              = f.text_field :description, class: "productDescribe", placeholder: "商品の説明(必須1,000文字以内)"
+              -# %input{name: "product", placeholder: " 商品の説明(必須1,000文字以内) 色、素材、重さ、定価、注意点など）           例)　2010年頃に１0万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", type: "text", class: "productDescribe"}
+            
+          .inputArea__input_details
+            .inputArea__input_details_top
+              商品の詳細
+            .inputArea__input_details_first
+              カテゴリー
+              .inputArea__input_details_first_alert 必須
+            .inputArea__input_details_form_category
+              %input{name: "category", placeholder: "選択してください", type: "string", class: "category"}
+
+            .inputArea__input_details_second
+              ブランド
+              .inputArea__input_details_second_alert 必須
+            .inputArea__input_details_form_brand
+              = f.text_field :brand_id
+              %input{name: "brand", placeholder: "例）シャネル", type: "string", class: "brand"}
+
+            .inputArea__input_details_third
+              商品の状態
+              .inputArea__input_details_third_alert 必須
+            .inputArea__input_details_form_status
+              = f.select :status, ['新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い']
+              
+          .inputArea__input_delivery
+            .inputArea__input_delivery_top
+              配送について
+            .inputArea__input_delivery_first
+              配送料の負担
+              = f.select :shipping_cost, ['送料込み(出品者負担)','着払い(購入者負担)']
+              .inputArea__input_delivery_first_alert 必須
+            .inputArea__input_delivery_form_charge
+              %input{name: "charge", placeholder: "選択してください", type: "string", class: "charge"}
+            .inputArea__input_delivery_second
+              発送元の地域
+              .inputArea__input_delivery_second_alert 必須
+            .inputArea__input_delivery_form_area
+              %input{name: "area", placeholder: "選択してください", type: "string", class: "area"}
+            .inputArea__input_delivery_third
+              発送までの日数
+              = f.select :shipping_days, ['1~2日で発送']
+              .inputArea__input_delivery_third_alert 必須
+            .inputArea__input_delivery_form_date
+              %input{name: "date", placeholder: "選択してください", type: "string", class: "date"}
+
+          .inputArea__input_priceArea
+            .inputArea__input_priceArea_top
+              価格 (￥300~9,999,999)
+            .inputArea__input_priceArea_price
+              販売価格
+              .inputArea__input_priceArea_price_alert　必須
+              .inputArea__input_priceArea_price_form
+            .inputArea__input_priceArea_charge
+              販売手数料(10%)
+            .inputArea__input_priceArea_profit
+              販売利益
+            .inputArea__input_priceArea_button
+              .inputArea__input_priceArea_button_box
+                .inputArea__input_priceArea_button_box_content
+                  = f.submit class: "sell"
+                  .inputArea__input_priceArea_button_box_content_submit
+                    出品
+                .inputArea__input_priceArea_button_box_draft
+                  = f.submit class: "save"
+                  .inputArea__input_priceArea_button_box_draft_saved
+                    下書きに保存する
+                .inputArea__input_priceArea_button_box_back
+                  = link_to "もどる", "#", class: "backBtn"
+            .inputArea__input_priceArea_caution
+              禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+          .copyright 
+            .copyright_policy
+              .copyright_policy_blank
+              .copyright_policy_privacy
+                プライバシーポリシー 
+              .copyright_policy_terms
+                メルカリ利用規約
+              .copyright_third_notation
+                特定商取引に関する表記
+            .copyright_logo
+              %span.image
+                = image_tag "/assets/logo-white.png", class: "copyright_logo"
+            .copyright_font
+              &copy; Team H ,inc
           
-        .inputArea__input_productArea
-          .inputArea__input_productArea_name
-            商品名
-            .inputArea__input_productArea_name_alert 必須
-          .inputArea__input_productArea_name_form 
-
-          .inputArea__input_productArea_describe
-            商品の説明
-            .inputArea__input_productArea_describe_alert 必須
-          .inputArea__input_productArea_describe_form
           
-        .inputArea__input_details
-          .inputArea__input_details_top
-            商品の詳細
-          .inputArea__input_details_first
-            カテゴリー
-            .inputArea__input_details_first_alert 必須
-          .inputArea__input_details_form
-
-          .inputArea__input_details_second
-            ブランド
-            .inputArea__input_details_second_alert 必須
-          .inputArea__input_details_form  
-
-          .inputArea__input_details_third
-            商品の状態
-            .inputArea__input_details_third_alert 必須
-          .inputArea__input_details_second_form
-
-
-        .inputArea__input_details
-          .inputArea__input_details_top
-            配送について
-          .inputArea__input_details_first
-            配送料の負担
-            .inputArea__input_details_first_alert 必須
-          .inputArea__input_details_form
-
-          .inputArea__input_details_second
-            発送元の地域
-            .inputArea__input_details_second_alert 必須
-          .inputArea__input_details_form  
-
-          .inputArea__input_details_third
-            発送までの日数
-            .inputArea__input_details_third_alert 必須
-          .inputArea__input_details_form
-
-        .inputArea__input_priceArea
-          .inputArea__input_priceArea_top
-            価格 (￥300~9,999,999)
-          .inputArea__input_priceArea_price
-            販売価格
-            .inputArea__input_priceArea_price_alert　必須
-            .inputArea__input_priceArea_price_form
-          .inputArea__input_priceArea_charge
-            販売手数料(10%)
-          .inputArea__input_priceArea_profit
-            販売利益
-          .inputArea__input_priceArea_button
-            .inputArea__input_priceArea_button_submit 
-              出品する
-            .inputArea__input_priceArea_button_draft
-              下書きに保存する
-            .inputArea__input_priceArea_button_back
-              もどる
-          .inputArea__input_priceArea_caution
-            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-        .copyright 
-          .copyright_policy
-            .copyright_policy_blank
-            .copyright_policy_privacy
-              プライバシーポリシー 
-            .copyright_policy_terms
-              メルカリ利用規約
-            .copyright_third_notation
-              特定商取引に関する表記
-          .copyright_logo
-            %span.image
-              = image_tag "/assets/logo-white.png", class: "copyright_logo"
-          .copyright_font
-            &copy; Team H ,inc
-        
-        
