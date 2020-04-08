@@ -172,7 +172,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: gray;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -183,7 +183,7 @@
           }
           &_form_brand {
             height: 50px;
-            .brand {
+            #product_brand_id {
               height: 50px;
               width: 620px;
               border-radius: 5px;
@@ -212,7 +212,7 @@
           }
           &_form_status {
             height: 50px;
-            .status {
+            #product_status {
               height: 50px;
               width: 620px;
               border-radius: 5px;
@@ -255,7 +255,7 @@
           }
           &_form_charge {
             height: 50px;
-            .charge {
+            #product_shipping_cost {
               height: 50px;
               width: 620px;
               border-radius: 5px;
@@ -313,7 +313,7 @@
           }
           &_form_date {
             height: 50px;
-            .date {
+            #product_shipping_days {
               height: 50px;
               width: 620px;
               border-radius: 5px;
@@ -343,17 +343,30 @@
             padding: 40px 20px 20px;
             font-size: 14px;
             font-weight: bold;
-            &_alert {
-              background-color: red;
-              font-size: 12px;
-              color: #ffffff;
-              margin-left: 10px;
-              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-              padding: 2px 3px 2px 3px;
-              border-radius: 3px;
-              &_form {
-              background-color: red;
+            &_area {
+              font-size: 14px;
+              display: flex;
+              font-size: 14px;
+              font-weight: bold;
+              height: 16px;
+              &_alert {
+                background-color: red;
+                font-size: 12px;
+                color: #ffffff;
+                margin-left: 10px;
+                font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+                padding: 2px 3px 2px 3px;
+                border-radius: 3px;
               }
+            }
+            #product_price {
+              height: 50px;
+              width: 400px;
+              margin-left: 50px;
+              border-radius: 5px;
+              margin-left: 120px;
+              font-size: 14px;
+              border: solid 1px #33ccff;
             }
           }
           &_charge {
@@ -370,31 +383,44 @@
             width: 350px;
             &_box {
               &_content {
-                height: 50px;
-                border-radius: 10px;
-                background-color: #33ccff;
-                color: #ffffff;
-                line-height: 50px;
-                font-weight: bold;
-                text-align: center;
-                text-decoration: none;
+                // height: 50px;
+                // border-radius: 10px;
+                // background-color: #33ccff;
+                // color: #ffffff;
+                // line-height: 50px;
+                // font-weight: bold;
+                // text-align: center;
+                // text-decoration: none;
                 .sell {
+                  height: 130px;
+                  width: 350px;
                   text-decoration: none;
                   color: #ffffff;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: #33ccff;
+                  color: #ffffff;
+                  line-height: 50px;
+                  font-weight: bold;
+                  text-align: center;
+                  text-decoration: none;
+                  transition: background-color .5s;
                 }
               }
               &_draft {
-                height: 50px;
-                border-radius: 10px;
-                background-color: lightgray;
-                color: #ffffff;
-                line-height: 50px;
-                font-weight: bold;
-                text-align: center;
-                margin-top: 15px;
                 .save {
+                  height: 130px;
+                  width: 350px;
                   text-decoration: none;
                   color: #ffffff;
+                  height: 50px;
+                  border-radius: 10px;
+                  background-color: lightgray;
+                  color: #ffffff;
+                  line-height: 50px;
+                  font-weight: bold;
+                  text-align: center;
+                  margin-top: 15px;
                 }
               }
               &_back {
