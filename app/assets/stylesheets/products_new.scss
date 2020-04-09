@@ -67,6 +67,7 @@
         &_productArea {
           height: 500px;
           max-width: 100%;
+          border-bottom: solid 2px #f8f8f8;
           &_name {
             margin: 0px 20px;
             padding: 40px 20px 20px;
@@ -450,9 +451,7 @@
           height: 50px;
           display: flex;
           font-size: 12px;
-          margin-top: 40px;
           &_blank {
-            width: 170px;
           }
           &_privacy {
             margin-right: 15px;
