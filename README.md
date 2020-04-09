@@ -50,7 +50,7 @@ Things you may want to cover:
 |price|string|null: false|
 |description|string|null: false|
 |size|string|null: false|
-|brand_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |status|string|null: false|
 |prefecture_id|string|null: false|
