@@ -13,13 +13,18 @@
               .inputArea__input_imageArea_top_alert 必須
             .inputArea__input_imageArea_describe 最大10枚までアップロードできます
             .inputArea__input_imageArea_form
-              = f.fields_for :images do |i|
-                .js-box{data: { index: i.index }}
-                  = i.file_field :src, class: "js-file"
-                  %br/
-                  %span.js-remove 削除
-                  
-            
+              -# = form_for @product do |f|
+              #image-box
+                #previews
+                  -# - if @product.persisted?
+                  -#   - @product.images.each_with_index do |image, i|
+                  -#     = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+                = f.fields_for :images do |i|
+                  .js-box{data: { index: i.index }}
+                    = i.file_field :src, class: "js-file"
+                    %br/
+                    %span.js-remove 削除
+
           .inputArea__input_productArea
             .inputArea__input_productArea_name
               商品名
