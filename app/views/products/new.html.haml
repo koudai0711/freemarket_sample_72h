@@ -25,7 +25,7 @@
               商品の説明
               .inputArea__input_productArea_describe_alert 必須
             .inputArea__input_productArea_form__describe
-              = f.text_field :description, class: "productDescribe", placeholder: "商品の説明(必須1,000文字以内)"
+              = f.text_area :description, class: "productDescribe", placeholder: "商品の説明(必須1,000文字以内)"
               
             
           .inputArea__input_details
@@ -35,13 +35,13 @@
               カテゴリー
               .inputArea__input_details_first_alert 必須
             .inputArea__input_details_form_category
-              %input{name: "category", placeholder: "選択してください", type: "string", class: "category"}
+              -# %input{name: "category", placeholder: "選択してください", type: "string", class: "category"}
 
             .inputArea__input_details_second
               ブランド
               .inputArea__input_details_second_alert 任意
             .inputArea__input_details_form_brand
-              = f.text_field :brand_id, placeholder: "例）シャネル"
+              -# = f.text_field :brand_id, placeholder: "例）シャネル"
 
             .inputArea__input_details_third
               商品の状態

@@ -47,15 +47,15 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|price|string|null: false|
-|description|string|null: false|
-|size|string|null: false|
+|description|text|null: false|
 |brand_id|integer|foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |status|string|null: false|
-|prefecture_id|string|null: false|
 |shipping_cost|string|null: false|
+|prefecture_id|string|null: false|
 |shipping_days|string|null: false|
+|price|string|null: false|
+<!-- |size|string|null: false| -->
 |shipping_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
