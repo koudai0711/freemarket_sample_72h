@@ -6,9 +6,12 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   # validates :size, presence: true
+  # validates :brand, presence: true
   validates :status, presence: true
   # validates :prefecture, presence: true
   validates :shipping_cost, presence: true
   validates :shipping_days, presence: true
   # validates :shipping_id, presence: true
+
+  validates :images, presence: true
 end

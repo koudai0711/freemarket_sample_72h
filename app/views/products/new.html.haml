@@ -13,7 +13,12 @@
               .inputArea__input_imageArea_top_alert 必須
             .inputArea__input_imageArea_describe 最大10枚までアップロードできます
             .inputArea__input_imageArea_form
-              = render partial: 'form'
+              = f.fields_for :images do |i|
+                .js-box{data: { index: i.index }}
+                  = i.file_field :src, class: "js-file"
+                  %br/
+                  %span.js-remove 削除
+                  
             
           .inputArea__input_productArea
             .inputArea__input_productArea_name
@@ -41,7 +46,7 @@
               ブランド
               .inputArea__input_details_second_alert 任意
             .inputArea__input_details_form_brand
-              -# = f.text_field :brand_id, placeholder: "例）シャネル"
+              = f.text_field :brand, placeholder: "例）シャネル"
 
             .inputArea__input_details_third
               商品の状態

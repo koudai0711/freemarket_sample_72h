@@ -56,8 +56,8 @@ Things you may want to cover:
 |shipping_days|string|null: false|
 |price|string|null: false|
 <!-- |size|string|null: false| -->
-|shipping_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+<!-- |shipping_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true| -->
 
 
 ### Association
