@@ -2,7 +2,7 @@
   %header.single-header
     %h1.single-header-icon
       %label
-        = link_to  "#" do
+        = link_to  root_path do
           = image_tag "material/logo/logo.png", size: "400x100", alt: ""
   %main.single-main
     %section.l-single-container
@@ -48,39 +48,6 @@
                 %input.input-default.quarter{name: "month", placeholder: "xx月", type: "text"}/
                 %input.input-default.quarter{name: "day", placeholder: "xx日", type: "text"}/
             %input{name: "birthday", type: "hidden"}/
-          .form-group
-            %div
-              %label{for: "family_name_kanji"} 送付先氏名(全角)
-              %span.form-require 必須
-            %input.input-default.half{name: "family_name_kanji", placeholder: "例) 山田", type: "text"}/
-            %input.input-default.half{name: "first_name_kanji", placeholder: "例) 太郎", type: "text"}/
-          .form-group
-            %div
-              %label{for: "family_name_kana"} ふりがな(全角)
-              %span.form-require 必須
-            %input.input-default.half{name: "family_name_kana", placeholder: "例) やまだ", type: "text"}/
-            %input.input-default.half{name: "first_name_kana", placeholder: "例) たろう", type: "text"}/
-          .form-group
-            %label{for: "nickname"} 郵便番号
-            %span.form-require 必須
-            %input.input-default{name: "postal code", placeholder: "1111111", type: "text"}/
-          .form-group
-            %label{for: "prefectures"} 都道府県
-            %span.form-require 必須
-            %input.input-default{name: "prefectures", placeholder: "例) 東京都", type: "text"}/
-          .form-group
-            %label{for: "municipality"} 市町区村
-            %span.form-require 必須
-            %input.input-default{name: "municipality", placeholder: "例) 渋谷区", type: "text"}/
-          .form-group
-            %label{for: "address"} 番地
-            %span.form-require 必須
-            %input.input-default{name: "address", placeholder: "", type: "text"}/
-          .form-group
-            %label{for: "room"} マンション名,ビル名,部屋番号(任意)
-            %input.input-default{name: "room", type: "text"}/
-          .form-group
-            %label{for: "number"} お届け先の電話番号(任意)
-            %input.input-default{name: "number", type: "text"}/
         .l-single-content
           %button.btn-default.btn-red{type: "submit"} 登録
+  %footer.single-footer
