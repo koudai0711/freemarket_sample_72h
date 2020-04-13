@@ -3,7 +3,8 @@
     .logoHeader 
       .logoArea
         %span
-          = image_tag "/assets/material/logo/logo.png", class: "headerLogo"
+          = link_to "/" do
+            = image_tag "/assets/material/logo/logo.png", class: "headerLogo"
     = form_for @product do |f|
       .inputArea
         .inputArea__input
@@ -13,7 +14,14 @@
               .inputArea__input_imageArea_top_alert 必須
             .inputArea__input_imageArea_describe 最大10枚までアップロードできます
             .inputArea__input_imageArea_form
+<<<<<<< Updated upstream
             
+=======
+              %label{for: "js-file"}
+                %i.fas.fa-camera
+            = render partial: 'form'
+              
+>>>>>>> Stashed changes
           .inputArea__input_productArea
             .inputArea__input_productArea_name
               商品名
@@ -107,5 +115,5 @@
                 = image_tag "/assets/logo-white.png", class: "copyright_logo"
             .copyright_font
               &copy; Team H ,inc
-          
-          
+
+
