@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_065438) do
     t.string "prefecture_id", null: false
     t.string "shipping_days", null: false
     t.string "price", null: false
+    t.string "buyer_id"
+    t.string "saler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

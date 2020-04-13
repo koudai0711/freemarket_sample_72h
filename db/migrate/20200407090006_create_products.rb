@@ -9,6 +9,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string     :prefecture_id,   null: false
       t.string     :shipping_days,  null: false
       t.string     :price,          null: false
+      t.string     :buyer_id
+      t.string     :saler_id
       t.timestamps
     end
   end
