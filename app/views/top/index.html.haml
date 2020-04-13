@@ -3,7 +3,8 @@
     .mainheader
       %h1.icon
         %span.image
-          = image_tag "/assets/material/logo/logo.png", class: "image-logo"
+          = link_to "/" do
+            = image_tag "/assets/material/logo/logo.png", class: "image-logo"
         .searchBox
           %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
