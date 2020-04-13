@@ -68,7 +68,7 @@
               発送元の地域
               .inputArea__input_delivery_second_alert 必須
             .inputArea__input_delivery_form_area
-              -# = f.select :prefecture_id, [["北海道",1], ["青森県",2]],{include_blank:"選択してください"}
+              = f.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :name), {} 
             .inputArea__input_delivery_third
               発送までの日数
               .inputArea__input_delivery_third_alert 必須

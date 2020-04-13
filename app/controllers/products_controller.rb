@@ -7,23 +7,11 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @address = Prefecture.all
   end
 
-  # def create
-  #   @product = Product.new(product_params)
-  #   if @product.save
-  #     redirect_to root_path
-  #   else 
-  #     render :new
-  #   end
-  # end
   def create
     @product = Product.new(product_params)
-    unless @product.valid?
-      flash.now[:alert] = @product.errors.full_messages
-      @product.images.new
-      render :new and return
-    end
     if @product.save
       redirect_to root_path
     else
