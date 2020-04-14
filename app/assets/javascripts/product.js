@@ -9,9 +9,22 @@ $(document).on('turbolinks:load', ()=> {
                   </div>`;
     return html;
   }
+
+   // ラベルのwidth操作
+   function setLabel(images) {
+    //プレビューボックスのwidthを取得し、maxから引くことでラベルのwidthを決定
+    $('.inputArea__input_imageArea_form').css({
+      'width': `calc(620px - (20% * ${images}))`
+      })
+  }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<div class="img">
+                    <img class="img_image" data-index="${index}" src="${url}" ">
+                    <div class="img_btn">
+                      <div class="img_btn_edit">編集</div>
+                      <div class="img_btn_destroy">削除</div>
+                  </div>`;
     return html;
   }
 
@@ -25,6 +38,10 @@ $(document).on('turbolinks:load', ()=> {
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
+    console.log(targetIndex);
+    const changeIndex = targetIndex + 1
+    setLabel(changeIndex);
+
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);

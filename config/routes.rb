@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :products, except: :show
   resources :registrations
   resources :sessions
+
 end

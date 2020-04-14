@@ -33,6 +33,7 @@
         &_imageArea {
           height: 300px;
           max-width: 100%;
+          position: relative;
           border-bottom: solid 2px #f8f8f8;
           &_top {
             margin: 0px 20px;
@@ -58,10 +59,44 @@
             border: 1.5px lightgray;
             background-color: #f8f8f8;
             border-style: dotted;
-            height: 150px;
-            width: 90%;
+            height: 170px;
+            width: 620px;
             margin: 0 auto;
             margin-top: 20px;
+            position: absolute;
+            right: 40px;
+            .fas{
+              height: 100%;
+              width: 100%;
+              line-height: 170px;
+              text-align: center;
+            }
+          }
+          .img{
+            .img_image{
+              width: 20%;
+              height: 120px;
+              border: solid 1px gainsboro;
+            }
+            .img_btn{
+              display: flex;
+              &_edit{
+                height: 50px;
+                width: 60px;
+                text-align: center;
+                line-height: 50px;
+              }
+              &_destroy{
+                height: 50px;
+                width: 60px;
+                text-align: center;
+                line-height: 50px;
+              }
+            }
+          }
+          .previews_box{
+            width: 120px;
+            height: 170px;
           }
         }
         &_productArea {

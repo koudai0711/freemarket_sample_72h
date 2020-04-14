@@ -1,11 +1,9 @@
-
 %header.pcHeader
    .headerInner
       .mainHeader
          %h1.icon
             %span.image
-               = link_to "/" do
-                  = image_tag "/assets/logo.png", class: "image-logo"
+               = image_tag "/assets/logo.png", class: "image-logo"
          .searchBox
             %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
                %input{name: "utf8", type: "hidden", value: "✓"}/

@@ -21,7 +21,9 @@
                     = i.file_field :src, class: "js-file"
                     %br/
                     %span.js-remove 削除
-
+              %label{for: "js-file"}
+                %i.fas.fa-camera
+            = render partial: 'form'
           .inputArea__input_productArea
             .inputArea__input_productArea_name
               商品名
@@ -115,5 +117,5 @@
                 = image_tag "/assets/logo-white.png", class: "copyright_logo"
             .copyright_font
               &copy; Team H ,inc
-          
-          
+
+
