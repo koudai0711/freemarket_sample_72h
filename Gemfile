@@ -75,3 +75,8 @@ end
   gem 'active_hash'
   gem 'devise'
   gem "jquery-rails"
+
+  gem 'carrierwave'
+  gem 'mini_magick'
+
+  gem 'pry-rails'

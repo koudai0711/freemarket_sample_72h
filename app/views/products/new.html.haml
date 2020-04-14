@@ -3,7 +3,7 @@
     .logoHeader 
       .logoArea
         %span
-          = link_to "/" do
+          = link_to root_path do
             = image_tag "/assets/material/logo/logo.png", class: "headerLogo"
     = form_for @product do |f|
       .inputArea
@@ -14,14 +14,16 @@
               .inputArea__input_imageArea_top_alert 必須
             .inputArea__input_imageArea_describe 最大10枚までアップロードできます
             .inputArea__input_imageArea_form
-<<<<<<< Updated upstream
-            
-=======
+              #image-box
+                #previews
+                = f.fields_for :images do |i|
+                  .js-box{data: { index: i.index }}
+                    = i.file_field :src, class: "js-file"
+                    %br/
+                    %span.js-remove 削除
               %label{for: "js-file"}
                 %i.fas.fa-camera
             = render partial: 'form'
-              
->>>>>>> Stashed changes
           .inputArea__input_productArea
             .inputArea__input_productArea_name
               商品名
@@ -32,7 +34,7 @@
               商品の説明
               .inputArea__input_productArea_describe_alert 必須
             .inputArea__input_productArea_form__describe
-              = f.text_field :description, class: "productDescribe", placeholder: "商品の説明(必須1,000文字以内)"
+              = f.text_area :description, class: "productDescribe", placeholder: "商品の説明(必須1,000文字以内)"
               
             
           .inputArea__input_details
@@ -46,9 +48,9 @@
 
             .inputArea__input_details_second
               ブランド
-              .inputArea__input_details_second_alert 必須
+              .inputArea__input_details_second_alert 任意
             .inputArea__input_details_form_brand
-              = f.text_field :brand_id, placeholder: "例）シャネル"
+              = f.text_field :brand, placeholder: "例）シャネル"
 
             .inputArea__input_details_third
               商品の状態
@@ -68,7 +70,7 @@
               発送元の地域
               .inputArea__input_delivery_second_alert 必須
             .inputArea__input_delivery_form_area
-              %input{name: "area", placeholder: "選択してください", type: "string", class: "area"}
+              = f.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :name), {} 
             .inputArea__input_delivery_third
               発送までの日数
               .inputArea__input_delivery_third_alert 必須
