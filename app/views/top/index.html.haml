@@ -3,7 +3,8 @@
     .mainheader
       %h1.icon
         %span.image
-          = image_tag "/assets/material/logo/logo.png", class: "image-logo"
+          = link_to root_path do
+            = image_tag "/assets/material/logo/logo.png", class: "image-logo"
         .searchBox
           %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
@@ -259,6 +260,6 @@
 
 .footer_camera
   .footer_camera_btn
-    出品する
+    = link_to '出品', new_product_path 
   %span
     = image_tag "/assets/material/icon/icon_camera.png", class: "icon-camera"

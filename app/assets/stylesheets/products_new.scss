@@ -102,6 +102,7 @@
         &_productArea {
           height: 500px;
           max-width: 100%;
+          border-bottom: solid 2px #f8f8f8;
           &_name {
             margin: 0px 20px;
             padding: 40px 20px 20px;
@@ -207,7 +208,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: lightgray;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -218,7 +219,7 @@
           }
           &_form_brand {
             height: 50px;
-            #product_brand_id {
+            #product_brand {
               height: 50px;
               width: 620px;
               border-radius: 5px;
@@ -319,7 +320,7 @@
           }
           &_form_area {
             height: 50px;
-            .area {
+            #product_prefecture_id {
               height: 50px;
               width: 620px;
               border-radius: 5px;
@@ -485,9 +486,7 @@
           height: 50px;
           display: flex;
           font-size: 12px;
-          margin-top: 40px;
           &_blank {
-            width: 170px;
           }
           &_privacy {
             margin-right: 15px;
