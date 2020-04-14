@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :products, dependent: :destroy
-  belongs_to :destination
+  has_one  :destination
   has_many :cards, dependent: :destroy
   has_many :addresses, dependent: :destroy
 end
