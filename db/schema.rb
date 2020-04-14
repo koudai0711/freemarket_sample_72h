@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_04_08_111445) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_111445) do
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prefecture_id"
   end
 
   create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,25 +59,24 @@ ActiveRecord::Schema.define(version: 2020_04_08_111445) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.integer "product_id", null: false
+    t.string "src", null: false
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "price", null: false
-    t.string "description", null: false
-    t.string "size", null: false
-    t.integer "brand_id", null: false
-    t.integer "category_id", null: false
+    t.text "description", null: false
     t.string "status", null: false
-    t.string "prefecture", null: false
+    t.string "brand"
     t.string "shipping_cost", null: false
+    t.string "prefecture_id", null: false
     t.string "shipping_days", null: false
-    t.integer "shipping_id", null: false
-    t.integer "user_id", null: false
+    t.string "price", null: false
+    t.string "buyer_id"
+    t.string "saler_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -92,4 +93,5 @@ ActiveRecord::Schema.define(version: 2020_04_08_111445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "images", "products"
 end
