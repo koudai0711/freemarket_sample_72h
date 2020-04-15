@@ -104,7 +104,7 @@
   .field
     = f.label :birth_day
     %br/
-    = f.date_select :birth_day, autofocus: true
+    = f.date_select :birth_day, {start_year: 1900, end_year: 2050}, autofocus: true
 
   .actions
     = f.submit "Sign up"
