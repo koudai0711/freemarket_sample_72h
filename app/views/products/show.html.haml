@@ -3,7 +3,8 @@
       .mainHeader
          %h1.icon
             %span.image
-               = image_tag "/assets/logo.png", class: "image-logo"
+               =link_to root_path do
+                  = image_tag "/assets/logo.png", class: "image-logo"
          .searchBox
             %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
                %input{name: "utf8", type: "hidden", value: "✓"}/
@@ -80,7 +81,7 @@
    .main__content
       .main__content-space
       .main__content-productName
-         product
+         = @product.name
       .main__content-image
          %span.image
             = image_tag "/assets/Product_Details/main.png", size: "560x346"
@@ -96,17 +97,17 @@
                   = image_tag "/assets/Product_Details/right.png", size: "140x87"
       .main__content-price
          .content-price-sellingPrice
-            ¥20000
+            = @product.price
          .content-price-tax
             （税込）送料込み
       .main__content-description
          .content-description-top
-            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+            = @product.description
             %table
                %tbody
                   %tr
                   %th 出品者
-                  %td hoge
+                  %td 
                   %tr
                   %th カテゴリー
                   %td
@@ -118,22 +119,27 @@
                   %tr
                   %th ブランド
                   %td
+                     = @product.brand
                   %tr
                   %th 商品のサイズ
                   %td
+                     = @product.size
                   %tr
                   %th 商品の状態
-                  %td 新品/未使用
+                  %td 
+                     = @product.status
                   %tr
                   %th 配送料の負担
-                  %td 着払い(購入者負担)
+                  %td 
+                     = @product.shipping_cost
                   %tr
                   %th 発送元の地域
                   %td 
-                     %a{href: "#"} 青森県
+                     = @product.prefecture_id
                   %tr 
                   %th 発送日の目安
-                  %td 1~2で発送
+                  %td 
+                     = @product.shipping_days
             .optionalArea
                %ul
                   %li#likeBtn.optionalBtn.likeBtn
