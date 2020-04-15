@@ -53,22 +53,19 @@
 -#   %footer.single-footer
 
 %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
 
--# ニックネーム
   .field
     = f.label :nickname
     %br/
     = f.text_field :nickname, autofocus: true
 
--# メールアドレス
   .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
 
--# パスワード
   .field
     = f.label :password
     - if @minimum_password_length
@@ -77,13 +74,11 @@
     %br/
     = f.password_field :password, autocomplete: "new-password"
 
--# パスワード確認
   .field
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
 
--# 名前
   .name
     .field
       = f.label :last_name
@@ -95,7 +90,6 @@
       %br/
       = f.text_field :first_name, autofocus: true
 
--# ふりがな
   .name_kana
     .field
       = f.label :last_name_kana
@@ -107,7 +101,6 @@
       %br/
       = f.text_field :first_name_kana, autofocus: true
 
--# 生年月日
   .field
     = f.label :birth_day
     %br/
