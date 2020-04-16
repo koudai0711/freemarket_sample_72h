@@ -3,7 +3,8 @@
     .mainheader
       %h1.icon
         %span.image
-          = image_tag "/assets/material/logo/logo.png", class: "image-logo"
+          = link_to root_path do
+            = image_tag "/assets/material/logo/logo.png", class: "image-logo"
         .searchBox
           %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
@@ -49,10 +50,14 @@
             = link_to "ブランド", "#",class: "brandBtn"
             %ul.brandsPulldown.displayNone
         %ul.listsRight
-          %li.listsRight__item.listsRight__item--login
-            = link_to "ログイン", new_user_session_path
-          %li.listsRight__item.listsRight__item--new
-            = link_to "新規会員登録", new_user_registration_path
+          - if user_signed_in?
+            %li.listsRight__item.listsRight__item--mypage
+              = link_to "マイページ", '#'
+          - else
+            %li.listsRight__item.listsRight__item--login
+              = link_to "ログイン", new_user_session_path
+            %li.listsRight__item.listsRight__item--new
+              = link_to "新規会員登録", new_user_registration_path
 .contents
   %ul.contents__box
     %li.contents__box_one
@@ -159,7 +164,7 @@
       .contents__category_post_box
         .contents__category_post_box_iamge
           = link_to "#" do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
+            = image_tag "/public/fixtures/test.jpg",size: "220x150"
         .contents__category_post_box_article
           %lu.contents__category_post_box_article_detail
             %li
@@ -255,6 +260,6 @@
 
 .footer_camera
   .footer_camera_btn
-    出品する
+    = link_to '出品', new_product_path 
   %span
     = image_tag "/assets/material/icon/icon_camera.png", class: "icon-camera"
