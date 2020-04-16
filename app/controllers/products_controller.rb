@@ -36,11 +36,13 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @address = Prefecture.all
+    @image = Image.new
   end
   
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :status, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
+    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
   end
 
   def set_product

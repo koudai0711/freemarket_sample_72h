@@ -383,12 +383,70 @@ body {
             color: #333;
             border: 1px solid #333;
             text-decoration: none;
-            a {
+          }
+        }
+      }
+      .optionalArea2 {
+        margin-left: 265px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        .edit {
+          font: normal normal normal 14px/1 FontAwesome;
+          .editBtn {
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            text-decoration: none;
+            .eBtn {
+              text-decoration: none;
+            }
+          }
+        }
+        .delete {
+          font: normal normal normal 14px/1 FontAwesome;
+          .deleteBtn {
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            text-decoration: none;
+            .dBtn {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .purchaseArea {
+        margin-top: 20px;
+        .purchase {
+          font: normal normal normal 14px/1 FontAwesome;
+          .purchaseBtn {
+            height: 50px;
+            width: 300px;
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            background-color: #3CCACE;
+            text-decoration: none;
+            border-radius: 100px;
+            .pBtn {
+              text-decoration: none;
+              color: #ffffff;
+              text-align: center;
+              line-height: 40px;
+              font-size: 18px;
               
             }
           }
         }
       }
+    }
     
       
     }
@@ -462,8 +520,6 @@ body {
       }
 
     }
-    
-  }
 
   .appBanner {
     background-image: url(/assets/bg-appBanner-pict.jpg);

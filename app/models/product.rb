@@ -6,6 +6,9 @@ class Product < ApplicationRecord
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User"
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+
   validates :name, presence: true
   validates :price, presence: true
   validates :description, presence: true

@@ -50,12 +50,17 @@
                = link_to "ブランド", "#",class: "brandBtn"
                %ul.brandsPulldown.displayNone
          %ul.listsRight
-            %li.listsRight__item.listsRight__item--login
-               = link_to "ログイン", "#"
-            %li.listsRight__item.listsRight__item--new
-               = link_to "新規会員登録", "#"
+            - if user_signed_in?
+               %li.listsRight__item.listsRight__item--login
+                  = link_to "新規投稿", new_product_path
+               %li.listsRight__item.listsRight__item--new
+                  = link_to "ログアウト", destroy_user_session_path
+            - else 
+               %li.listsRight__item.listsRight__item--login
+                  = link_to "ログイン", new_user_session_path
+               %li.listsRight__item.listsRight__item--new
+                  = link_to "新規会員登録", new_user_registration_path
 
-   
 .breadCrumbs
    %ul.breadCrumbs-lists
       %li.lists-first
@@ -135,7 +140,9 @@
                   %tr
                   %th 発送元の地域
                   %td 
-                     = @product.prefecture_id
+                     -# - @address.each do |address|
+                     -#    = address.name
+                     = Prefecture.find(@product.prefecture_id).name
                   %tr 
                   %th 発送日の目安
                   %td 
@@ -147,9 +154,23 @@
                      お気に入り 0
                %ul.optional
                   %li.optionalBtn
-                     = link_to "#"
                      %i.fa.fa-flag
                      不適切な商品の通報
+
+            .purchaseArea 
+               - if user_signed_in? && current_user.id == @product.user_id
+                  %ul.purchase
+                     %li.purchaseBtn
+                        = link_to "商品を購入する", "#", class: "pBtn"
+            
+            .optionalArea2
+               - if user_signed_in? && current_user.id == @product.user_id
+                  %ul.edit
+                     %li.editBtn
+                        = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
+                  %ul.delete
+                     %li.deleteBtn
+                        = link_to "商品を削除する", product_path(@product.id), class: "dBtn"
 
    .commentBox
       %ul.commentContents
