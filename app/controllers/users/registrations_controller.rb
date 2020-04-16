@@ -12,6 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     if @user.save
       redirect_to root_path
+    else
+      # flash.now[:alert] = '必須項目を入力してください。'
+      render :new
     end
   end
 
