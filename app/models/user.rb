@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_one  :destination
   has_many :cards, dependent: :destroy
   has_many :addresses, dependent: :destroy
+
+  validates :nickname, :email, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_day, presence: true
 end
 
 

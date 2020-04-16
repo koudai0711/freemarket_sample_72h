@@ -51,6 +51,8 @@
             %ul.brandsPulldown.displayNone
         %ul.listsRight
           - if user_signed_in?
+            %li.listsRight__item.listsRight__item--login
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
             %li.listsRight__item.listsRight__item--mypage
               = link_to "マイページ", '#'
           - else
