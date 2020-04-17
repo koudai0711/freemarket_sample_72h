@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   resources :top
   resources :products, except: :show
   resources :users, only: :show
-
 end

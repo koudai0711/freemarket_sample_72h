@@ -22,7 +22,7 @@
     }
     .inputArea {
       max-width: 100%;
-      height: 2600px;
+      height: 2800px;
       background-color: #f8f8f8;
       &__input { 
         position: relative;
@@ -42,7 +42,7 @@
             font-weight: bold;
             display: flex;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -110,7 +110,7 @@
             font-weight: bold;
             display: flex;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -127,7 +127,7 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
           &_describe {
@@ -137,7 +137,7 @@
             font-weight: bold;
             display: flex;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -154,13 +154,13 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
         }
 
         &_details {
-          height: 500px;
+          height: 650px;
           max-width: 100%;
           background-color: #ffffff;
           border-bottom: solid 2px #f8f8f8;
@@ -179,7 +179,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -196,7 +196,7 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
 
@@ -225,7 +225,7 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
 
@@ -237,7 +237,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -254,7 +254,35 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
+            }
+          }
+          &_forth {
+            font-size: 14px;
+            display: flex;
+            margin: 0px 20px;
+            padding: 40px 20px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            &_alert {
+              background-color: $color-btn;
+              font-size: 12px;
+              color: #ffffff;
+              margin-left: 10px;
+              font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+              padding: 2px 3px 2px 3px;
+              border-radius: 3px;
+            }
+          }
+          &_form_size {
+            height: 50px;
+            #product_size {
+              height: 50px;
+              width: 620px;
+              border-radius: 5px;
+              margin-left: 40px;
+              font-size: 14px;
+              border: solid 1px $color-btn;
             }
           }
         }
@@ -280,7 +308,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -297,7 +325,7 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
 
@@ -309,7 +337,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -326,7 +354,7 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
 
@@ -338,7 +366,7 @@
             font-size: 14px;
             font-weight: bold;
             &_alert {
-              background-color: red;
+              background-color: $color-btn;
               font-size: 12px;
               color: #ffffff;
               margin-left: 10px;
@@ -355,7 +383,7 @@
               border-radius: 5px;
               margin-left: 40px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
         }
@@ -386,7 +414,7 @@
               font-weight: bold;
               height: 16px;
               &_alert {
-                background-color: red;
+                background-color: $color-btn;
                 font-size: 12px;
                 color: #ffffff;
                 margin-left: 10px;
@@ -402,7 +430,7 @@
               border-radius: 5px;
               margin-left: 120px;
               font-size: 14px;
-              border: solid 1px #33ccff;
+              border: solid 1px $color-btn;
             }
           }
           &_charge {
@@ -419,14 +447,6 @@
             width: 350px;
             &_box {
               &_content {
-                // height: 50px;
-                // border-radius: 10px;
-                // background-color: #33ccff;
-                // color: #ffffff;
-                // line-height: 50px;
-                // font-weight: bold;
-                // text-align: center;
-                // text-decoration: none;
                 .sell {
                   height: 130px;
                   width: 350px;
@@ -434,7 +454,7 @@
                   color: #ffffff;
                   height: 50px;
                   border-radius: 10px;
-                  background-color: #33ccff;
+                  background-color: $color-btn;
                   color: #ffffff;
                   line-height: 50px;
                   font-weight: bold;
@@ -464,7 +484,7 @@
                 text-align: center;
                 line-height: 20px;
                 font-size: 14px;
-                color: #33CCFF;
+                color: $color-btn;
                 margin-top: 20px;
                 .backBtn {
                   text-decoration: none;
