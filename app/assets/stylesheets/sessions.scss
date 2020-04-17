@@ -38,8 +38,9 @@
       .form{
         height: 300px;
         padding: 0 64px 40px;
+
         &__group{
-          margin: 55px 0 0;
+          margin: 40px 0 0;
           input{
             width: 90%;
             padding: 10px 16px 8px;
@@ -50,16 +51,24 @@
             font-size: 16px;
           }
         }
-        button{
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          text-align: center;
-          margin: 70px 0 0;
-          background: #3CCACE;
-          border: 1px solid #3CCACE;
-          color: white;
+        .button-class {
+          position: relative;
+          button{
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+            margin: 60px 0 0;
+            background: #3CCACE;
+            border: 1px solid #3CCACE;
+            color: white;
+          }
+          .actions {
+            position: absolute;
+            top: 20px;
+            left: 150px;
+          }
         }
       }
     }

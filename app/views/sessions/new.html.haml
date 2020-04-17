@@ -1,0 +1,19 @@
+-# .contain
+-#   .header
+-#     .header__box
+-#       %label
+-#         = link_to "#" do
+-#           = image_tag "material/logo/logo.png", size: "350x90", alt: "フリマ"
+-#   .main
+-#     .main__panel
+-#       .login-no-account
+-#         %p アカウントをお持ちでない方はこちら
+-#         %label
+-#           = link_to "新規会員登録", "#", class: "login"
+
+      .form
+        .form__group
+          %input{name: "email", placeholder: "メールアドレス", type: "email"}/
+        .form__group
+          %input{name: "password", placeholder: "パスワード", type: "password"}/
+        %button.login{type: "submit"} ログイン
