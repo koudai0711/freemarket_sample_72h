@@ -14,13 +14,6 @@ ActiveRecord::Schema.define(version: 2020_04_13_065438) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
-
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
