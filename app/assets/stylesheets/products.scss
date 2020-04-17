@@ -275,47 +275,53 @@ body {
       margin: 0 auto;
       height: 1320px;
       text-align: center;
-      .main__content-productName {
+      &__productName {
         font-weight: bold;
         font-size: 24px;
       }
-      .main__content-image {
+      &__image {
         width: 100%;
         vertical-align: bottom;
         margin-top: 20px;
         object-fit: cover;
-        .content-image-small {
+        .img1 {
+          height: 300px;
+        }
+        &__small {
           display: flex;
           justify-content: center;
           margin-top: 10px;
-          .content-image-small-left {
-            image {
-              object-fit: cover;
+          &__left {
+            height: 87px;
+            width: 140px;
+            .img {
+            height: 87px;
+            width: 140px;
             }
           }
-          .content-image-small-center {
-          object-fit: cover;
-          height: 90px;
-          }
-          .content-image-small-right {
-          object-fit: cover;
-          height: 90px;
-          }
+          // .content-image-small-center {
+          // object-fit: cover;
+          // height: 90px;
+          // }
+          // .content-image-small-right {
+          // object-fit: cover;
+          // height: 90px;
+          // }
         }
       }
-      .main__content-price {
+      &__price {
         margin: 24px 0 24px; 
-        .content-price-sellingPrice {
+        &__sellingPrice {
           font-size: 46px;
           font-weight: bold;
           margin: 0 10px 0 0;
           }
-          .content-price-tax {
-            font-size: 16px;
-          }
+        &__tax {
+          font-size: 16px;
+        }
       }
-      .main__content-description {
-        .content-description-top {
+      &__description {
+        &__top {
           line-height: 1.5;
           font-size: 18px;
           margin-bottom: 30px;
@@ -549,7 +555,7 @@ body {
         .aBtn {
           width: 153px;
           padding-top: 12px;
-          height: 46px;
+          height: 59px;
           vertical-align: bottom;
           margin: 5px;
         }
@@ -567,11 +573,11 @@ body {
     color: #fff;
     background-color: #272727;
     text-align: center;
-
     .contents {
       max-width: 840px;
       margin: 0 auto;
       display: flex;
+      height: 300px;
       .content {
         display: flex;
         flex-direction: column;

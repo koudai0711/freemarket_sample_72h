@@ -84,35 +84,25 @@
 
 .main 
    .main__content
-      .main__content-space
-      .main__content-productName
+      .main__content__space
+      .main__content__productName
          = @product.name
-      .main__content-image
+      .main__content__image
          %span.image
-            -# = image_tag "/assets/Product_Details/main.png", size: "560x346"
-            -# = Product.find(@product.id).images
             - @image.each do |image|
-               = image_tag image.src.url
-            -# = Prefecture.find(@product.prefecture_id).name
-            -# = Product.find(1).images
-            
-         .content-image-small
-            .small-left
-               %span.image
-                  = image_tag "/assets/Product_Details/left.png", size: "140x87"
-            .small-center
-               %span.image
-                  = image_tag "/assets/Product_Details/center.png", size: "140x87"
-            .small-right
-               %span.image
-                  = image_tag "/assets/Product_Details/right.png", size: "140x87"
-      .main__content-price
-         .content-price-sellingPrice
+               = image_tag image.src.url, class: "img1"
+               - break
+         .content__image__small
+            .content__iamge__small__left
+               - @image.each do |image|
+                  = image_tag image.src.url
+      .main__content__price
+         .main__content__price__sellingPrice
             = @product.price
-         .content-price-tax
+         .main__content__price__tax
             （税込）送料込み
-      .main__content-description
-         .content-description-top
+      .main__content__description
+         .main__content__description__top
             = @product.description
             %table
                %tbody
