@@ -36,8 +36,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @address = Prefecture.all
-    @image = Image.new
+    @image = Image.where(product_id: params[:id])
   end
   
 

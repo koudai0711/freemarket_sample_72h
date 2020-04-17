@@ -89,7 +89,13 @@
          = @product.name
       .main__content-image
          %span.image
-            = image_tag "/assets/Product_Details/main.png", size: "560x346"
+            -# = image_tag "/assets/Product_Details/main.png", size: "560x346"
+            -# = Product.find(@product.id).images
+            - @image.each do |image|
+               = image_tag image.src.url
+            -# = Prefecture.find(@product.prefecture_id).name
+            -# = Product.find(1).images
+            
          .content-image-small
             .small-left
                %span.image
@@ -140,8 +146,6 @@
                   %tr
                   %th 発送元の地域
                   %td 
-                     -# - @address.each do |address|
-                     -#    = address.name
                      = Prefecture.find(@product.prefecture_id).name
                   %tr 
                   %th 発送日の目安
