@@ -152,7 +152,7 @@
                      不適切な商品の通報
 
             .purchaseArea 
-               - if user_signed_in? && current_user.id == @product.user_id
+               - if user_signed_in?
                   %ul.purchase
                      %li.purchaseBtn
                         = link_to "商品を購入する", "#", class: "pBtn"
@@ -164,7 +164,7 @@
                         = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
                   %ul.delete
                      %li.deleteBtn
-                        = link_to "商品を削除する", product_path(@product.id), class: "dBtn"
+                        = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "dBtn"
 
    .commentBox
       %ul.commentContents

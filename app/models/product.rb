@@ -17,7 +17,4 @@ class Product < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :shipping_days, presence: true
   validates :images, presence: true
-
-
-
 end

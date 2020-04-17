@@ -1,0 +1,16 @@
+main {
+  &__delete {
+    height: 500px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__backBtn {
+    .backBtn {
+      height: 500px;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
