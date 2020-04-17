@@ -51,3 +51,99 @@
         .l-single-content
           %button.btn-default.btn-red{type: "submit"} 登録
   %footer.single-footer
+
+
+
+
+  form
+  .form_signup-container
+    %h2.signup-header 会員情報入力
+    = form_for(resource, as: resource_name, url: user_registration_path) do |f|
+      .form_signup-container_registration-form
+        .form_signup-container_registration-form_signup-container_nickname
+          = f.label :nickname, 'ニックネーム', class: 'signup-label'
+          %span.esessential-icon 必須
+          %br
+          = f.text_field :nickname, class: 'nickname'
+        .form_signup-container_registration-form_signup-container_email
+          = f.label :mailadress, 'メールアドレス(＠とドメインを含む)', class: 'signup-label'
+          %span.esessential-icon 必須
+          %br
+          = f.email_field :email, placeholder: '00000@00000', class: 'email'
+        .form_signup-container_registration-form_signup-container_password
+          = f.label :password, 'パスワード(７文字以上)', class: 'signup-label'
+          %span.esessential-icon 必須
+          %br
+          = f.password_field :password, class: 'password'
+        = f.fields_for :profile do |m|
+          .form_signup-container_registration-form_signup-container_name
+            = m.label :name, 'お名前(全角)', class: 'signup-label'
+            %span.esessential-icon 必須
+            %br
+            = m.text_field :family_name, placeholder: '山田', class: 'family_name'
+            = m.text_field :first_name, placeholder: '太郎', class: 'first_name'
+          .form_signup-container_registration-form_signup-container_name_kana
+            = m.label :kana, 'お名前カナ(全角)', class:'signup-label' 
+            %span.esessential-icon 必須    
+            %br
+            = m.text_field :family_name_kana, placeholder: 'ヤマダ', class:'family_name_kana'
+            = m.text_field :first_name_kana, placeholder: 'タロウ', class:'first_name_kana' 
+          .form_signup-container_registration-form_signup-container_birth_day
+            = m.label :birthday, '生年月日', class: 'birthday' 
+            %span.esessential-icon 必須 
+            %br
+            != sprintf(m.date_select(:birth_day, prefix:'birth_day',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        = f.fields_for :delivery_destination do |k|
+          .form_signup-container_registration-form_signup-container_destination_name
+            = k.label :name, '送付先お名前(全角)', class: 'signup-label'
+            %span.esessential-icon 必須
+            %br
+            = k.text_field :destination_family_name, placeholder: '山田', class:'destination_family_name'
+            = k.text_field :destination_first_name, placeholder: '太郎', class:'destination_first_name'
+          .form_signup-container_registration-form_signup-container_destination_name_kana
+            = k.label :kana, '送付先お名前カナ(全角)', class:'signup-label' 
+            %span.esessential-icon 必須    
+            %br
+            = k.text_field :destination_family_name_kana, placeholder: 'ヤマダ', class:'destination_family_name_kana'
+            = k.text_field :destination_first_name_kana, placeholder: 'タロウ', class:'destination_first_name_kana' 
+          .form_signup-container_registration-form_signup-container_postal_code
+            = k.label :postal_code, '郵便番号', class: 'signup-label'
+            %span.esessential-icon 必須 
+            %br
+            = k.text_field :postal_code, placeholder: '郵便番号 例：000-0000', class: 'postal_code'
+          .form_signup-container_registration-form_signup-container_prefecture
+            = k.label :prefecture, '都道府県', class: 'signup-label'
+            %span.esessential-icon 必須 
+            %br
+            = k.text_field :prefecture, placeholder: '都道府県 例：東京都', class: 'prefecture'
+          .form_signup-container_registration-form_signup-container_city
+            = k.label :city, '市区町村', class: 'signup-label'
+            %span.esessential-icon 必須 
+            %br
+            = k.text_field :city, placeholder: '市区町村', class: 'city'
+          .form_signup-container_registration-form_signup-container_house_number
+            = k.label :house_number, '番地', class: 'signup-label'
+            %span.esessential-icon 必須 
+            %br
+            = k.text_field :house_number, placeholder: '番地', class: 'house_number'
+          .form_signup-container_registration-form_signup-container_building_name
+            = k.label :building_name, 'マンションやビル名、部屋番号', class: 'signup-label'
+            %span.optional-icon 任意
+            %br
+            = k.text_field :building_name, placeholder: 'マンションやビル名、部屋番号', class: 'building_name'
+          .form_signup-container_registration-form_signup-container_phone_number
+            = k.label :phone_number, '電話番号', class: 'signup-label'
+            %span.optional-icon 任意
+            %br
+            = k.text_field :phone_number, placeholder: '電話番号', class: 'phone_number'
+          .form_signup-container_registration-form_signup-container_identification
+            = k.label :identification, '本人確認', class: 'identification'
+            %br
+            %h3 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .form_signup-container_registration-form_signup-form-container
+            %p.signup-form-container__agreement-text
+            「次へ進む」のボタンを押すことにより
+            = link_to '利用規約','',{class: "default-link-text"}
+            に同意したものとみなします。
+            %br
+            = f.submit "登録", class: "submit"
