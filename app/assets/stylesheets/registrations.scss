@@ -5,18 +5,16 @@
 .single-container{
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   text-align: center;
-  background: whitesmoke;
+  background-color: whitesmoke;
+  padding: 40px;
   section{
     background: white;
     width: 700px;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 40px auto 40px;
+    padding: 20px 0;
     h2{
-      padding-top: 20px;
-    }
-    form{
-      padding: 0 16px 40px 4px;
-      .l-single-content{display: block;
+      .l-single-content{
+        display: block;
         max-width: 343px;
         margin: 0 auto;
         .form-group{
