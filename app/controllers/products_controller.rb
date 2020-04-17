@@ -26,12 +26,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    # if @product.destroy
-    #    redirect_to root_path
-    # else 
-    #    redirect_to root_path
-    # end
+    if @product.destroy
+    else 
+      redirect_to root_path
+    end
   end
 
   def show
