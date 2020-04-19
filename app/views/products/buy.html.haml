@@ -58,8 +58,10 @@
                   %br/
                   森下 幸大
               %li.inputArea__input_details_box_inner_btn
-                .inputArea__input_details_box_inner_btn_submit 
-                  購入する
+                = link_to "/purchase/index" do
+                  .inputArea__input_details_box_inner_btn_submit
+                    購入する
+                
     .copyright 
       .copyright_policy
         .copyright_policy_blank

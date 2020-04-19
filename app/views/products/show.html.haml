@@ -146,7 +146,19 @@
                      = link_to "#"
                      %i.fa.fa-flag
                      不適切な商品の通報
-
+            .purchaseArea 
+               -# - if user_signed_in? && current_user.id == @product.user_id
+               %ul.purchase
+                  %li.purchaseBtn
+                     = link_to "商品を購入する", "#", class: "pBtn"
+            .optionalArea2
+               -# - if user_signed_in? && current_user.id == @product.user_id
+               %ul.edit
+                  %li.editBtn
+                     = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
+               %ul.delete
+                  %li.deleteBtn
+                     = link_to "商品を削除する", product_path(@product.id), class: "dBtn"
    .commentBox
       %ul.commentContents
       %form#new_comment.new_comment{"accept-charset" => "UTF-8", action: "#", method: "post"}
