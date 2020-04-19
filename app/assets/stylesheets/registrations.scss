@@ -17,13 +17,13 @@
         display: block;
         max-width: 343px;
         margin: 0 auto;
-        .form-group{
+        .field{
           margin: 24px 0 0;
-          label{
+          .signup-label{
             font-weight: 600;
             font-size: 14px;
           }
-          span{
+          .form-require{
             background: #3CCACE;
             color: white;
             padding: 2px 4px;
@@ -31,7 +31,7 @@
             font-size: 12px;
             border-radius: 2px;
           }
-          input{
+          .form-box{
             height: 48px;
             width: 80%;
             padding: 10px 16px 8px;
@@ -60,19 +60,19 @@
           }
         }
       }
-      .l-single-content{
-        button{
-        display: block;
-        width: 100%;
-        line-height: 48px;
-        font-size: 14px;
-        text-align: center;
-        margin: 70px 0 0;
-        background: #3CCACE;
-        border: 1px solid #3CCACE;
-        color: white;
-        }
-      }
+      // .l-single-content{
+      //   button{
+      //   display: block;
+      //   width: 100%;
+      //   line-height: 48px;
+      //   font-size: 14px;
+      //   text-align: center;
+      //   margin: 70px 0 0;
+      //   background: #3CCACE;
+      //   border: 1px solid #3CCACE;
+      //   color: white;
+      //   }
+      // }
     }
   }
   footer{
