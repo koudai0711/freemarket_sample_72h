@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
-
+  before_action :set_product, except: [:index, :new, :create, :buy]
   def show
   end
 
@@ -37,8 +36,11 @@ class ProductsController < ApplicationController
     end
 
   end
-  
 
+  def buy
+  end
+
+  private
   def product_params
     params.require(:product).permit(:name, :price, :description, :brand, :status, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
   end
