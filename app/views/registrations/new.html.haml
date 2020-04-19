@@ -60,21 +60,26 @@
     %h2.signup-header 会員情報入力
     = form_for(resource, as: resource_name, url: user_registration_path) do |f|
       .form_signup-container_registration-form
+
         .form_signup-container_registration-form_signup-container_nickname
           = f.label :nickname, 'ニックネーム', class: 'signup-label'
           %span.esessential-icon 必須
           %br
           = f.text_field :nickname, class: 'nickname'
+
         .form_signup-container_registration-form_signup-container_email
           = f.label :mailadress, 'メールアドレス(＠とドメインを含む)', class: 'signup-label'
           %span.esessential-icon 必須
           %br
           = f.email_field :email, placeholder: '00000@00000', class: 'email'
+          
         .form_signup-container_registration-form_signup-container_password
           = f.label :password, 'パスワード(７文字以上)', class: 'signup-label'
           %span.esessential-icon 必須
           %br
           = f.password_field :password, class: 'password'
+
+
         = f.fields_for :profile do |m|
           .form_signup-container_registration-form_signup-container_name
             = m.label :name, 'お名前(全角)', class: 'signup-label'
@@ -82,12 +87,14 @@
             %br
             = m.text_field :family_name, placeholder: '山田', class: 'family_name'
             = m.text_field :first_name, placeholder: '太郎', class: 'first_name'
+
           .form_signup-container_registration-form_signup-container_name_kana
             = m.label :kana, 'お名前カナ(全角)', class:'signup-label' 
             %span.esessential-icon 必須    
             %br
             = m.text_field :family_name_kana, placeholder: 'ヤマダ', class:'family_name_kana'
             = m.text_field :first_name_kana, placeholder: 'タロウ', class:'first_name_kana' 
+            
           .form_signup-container_registration-form_signup-container_birth_day
             = m.label :birthday, '生年月日', class: 'birthday' 
             %span.esessential-icon 必須 
