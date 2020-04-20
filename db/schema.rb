@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 2020_04_13_065438) do
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
-  create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_blands_on_name"
-  end
-
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "customer_id", null: false
@@ -72,10 +65,11 @@ ActiveRecord::Schema.define(version: 2020_04_13_065438) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.string "status", null: false
     t.string "brand"
+    t.string "status", null: false
+    t.string "size", null: false
     t.string "shipping_cost", null: false
-    t.string "prefecture_id", null: false
+    t.integer "prefecture_id", null: false
     t.string "shipping_days", null: false
     t.string "price", null: false
     t.string "buyer_id"

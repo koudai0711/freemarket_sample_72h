@@ -57,6 +57,12 @@
               .inputArea__input_details_third_alert 必須
             .inputArea__input_details_form_status
               = f.select :status, ['選択してください','新品、未使用','未使用に近い','目立った傷や汚れなし','やや傷や汚れあり','傷や汚れあり','全体的に状態が悪い']
+            
+            .inputArea__input_details_forth
+              商品のサイズ
+              .inputArea__input_details_forth_alert 必須
+            .inputArea__input_details_form_size
+              = f.select :size, ['XS','S','M','L','XL']
               
           .inputArea__input_delivery
             .inputArea__input_delivery_top
