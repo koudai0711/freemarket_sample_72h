@@ -16,5 +16,3 @@ class User < ApplicationRecord
   validates :nickname, :email, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_day, presence: true
 end
 
-
-# バリデーションはここに書く
