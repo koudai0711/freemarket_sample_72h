@@ -1,7 +1,8 @@
+
+
 body {
   display: block;
   margin: 0px;
-
   .pcHeader {
     padding: 0 60px;
     .headerInner {
@@ -274,31 +275,29 @@ body {
       margin: 0 auto;
       height: 1320px;
       text-align: center;
-      .main__content-productName {
+      &__productName {
         font-weight: bold;
         font-size: 24px;
       }
-      .main__content-image {
+      &__image {
         width: 100%;
         vertical-align: bottom;
         margin-top: 20px;
         object-fit: cover;
-        .content-image-small {
+        .img1 {
+          height: 300px;
+        }
+        &__small {
           display: flex;
           justify-content: center;
           margin-top: 10px;
-          .content-image-small-left {
-            image {
-              object-fit: cover;
+          &__left {
+            height: 87px;
+            width: 140px;
+            .img {
+            height: 87px;
+            width: 140px;
             }
-          }
-          .content-image-small-center {
-          object-fit: cover;
-          height: 90px;
-          }
-          .content-image-small-right {
-          object-fit: cover;
-          height: 90px;
           }
         }
       }
@@ -311,6 +310,48 @@ body {
         }
         .content-price-tax {
           font-size: 16px;
+          &__price {
+          margin: 24px 0 24px; 
+        &__sellingPrice {
+          font-size: 46px;
+          font-weight: bold;
+          margin: 0 10px 0 0;
+          }
+        &__tax {
+          font-size: 16px;
+        }
+      }
+      &__description {
+        &__top {
+          line-height: 1.5;
+          font-size: 18px;
+          margin-bottom: 30px;
+          table {
+            margin-top: 20px;
+            width: 100%;
+            height: 375px;
+            border-collapse: collapse;
+            border: 1px solid #f8f8f8;
+            tbody {
+              tr {
+                th {
+                  width: 20%;
+                  background-color: #eee;
+                  font-weight: 400;
+                  padding: 8px;
+                  border: 1px solid #dedede;
+                  font-size: 14px;
+                  text-align: center;
+                }
+                td {
+                  width: 61%;
+                  padding: 15px 15px;
+                  border: 1px solid #dedede;
+                  font-size: 14px;
+                }
+              }
+            }
+          } 
         }
       }
   .main__content-description {
@@ -340,6 +381,78 @@ body {
               padding: 15px 15px;
               border: 1px solid #DEDEDE;
               font-size: 14px;
+            }
+          }
+        }
+        .optional {
+          margin: 10px 0 0;
+          display: flex;
+          .optionalBtn {
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            border: 1px solid #333;
+            text-decoration: none;
+          }
+        }
+      }
+      .optionalArea2 {
+        margin-left: 265px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        .edit {
+          font: normal normal normal 14px/1 FontAwesome;
+          .editBtn {
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            text-decoration: none;
+            .eBtn {
+              text-decoration: none;
+            }
+          }
+        }
+        .delete {
+          font: normal normal normal 14px/1 FontAwesome;
+          .deleteBtn {
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            text-decoration: none;
+            .dBtn {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .purchaseArea {
+        margin-top: 20px;
+        .purchase {
+          font: normal normal normal 14px/1 FontAwesome;
+          .purchaseBtn {
+            height: 50px;
+            width: 300px;
+            font-size: 14px;
+            padding: 6px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            color: #333;
+            background-color: #3CCACE;
+            text-decoration: none;
+            border-radius: 100px;
+            .pBtn {
+              text-decoration: none;
+              color: #ffffff;
+              text-align: center;
+              line-height: 40px;
+              font-size: 18px;
             }
           }
         }
@@ -513,7 +626,6 @@ body {
       }
     }
   }
-
   .appBanner {
     background-image: url(/assets/bg-appBanner-pict.jpg);
     padding: 60px 40px;
@@ -542,7 +654,7 @@ body {
         .aBtn {
           width: 153px;
           padding-top: 12px;
-          height: 46px;
+          height: 59px;
           vertical-align: bottom;
           margin: 5px;
         }
@@ -560,11 +672,11 @@ body {
     color: #fff;
     background-color: #272727;
     text-align: center;
-
     .contents {
       max-width: 840px;
       margin: 0 auto;
       display: flex;
+      height: 300px;
       .content {
         display: flex;
         flex-direction: column;
@@ -653,4 +765,5 @@ body {
         }
     }
   }
+}
 }

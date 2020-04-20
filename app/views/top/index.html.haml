@@ -159,12 +159,11 @@
           = link_to "#" do
             新規投稿商品
     .contents__category_post
-      -# 商品一覧表示
-      -# - @products.each do |product|
       .contents__category_post_box
         .contents__category_post_box_iamge
-          = link_to "#" do
-            = image_tag "/public/fixtures/test.jpg",size: "220x150"
+          = link_to products_path do
+            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
+
         .contents__category_post_box_article
           %lu.contents__category_post_box_article_detail
             %li

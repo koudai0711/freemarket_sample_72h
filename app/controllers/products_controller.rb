@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
+
   before_action :set_product, except: [:index, :new, :create, :buy]
-  def show
-  end
 
   def new
     @product = Product.new
@@ -28,13 +27,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    
     if @product.destroy
-       redirect_to root_path
     else 
-       redirect_to root_path
+      redirect_to root_path
     end
+  end
 
+  def show
+    @image = Image.where(product_id: params[:id])
   end
 
   def buy
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :status, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
+    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
   end
 
   def set_product

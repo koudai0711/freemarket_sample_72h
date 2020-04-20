@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products do
+  resources :products, except: :show do
     collection do
       get 'buy'
     end
@@ -27,5 +27,5 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
-
+  resources :users, only: :show
 end

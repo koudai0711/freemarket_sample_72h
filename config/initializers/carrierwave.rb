@@ -1,7 +1,6 @@
 require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
-
 CarrierWave.configure do |config|
   # 下の記載はローカル環境からS3に保存するもの仮置き
   # config.storage = :fog
@@ -16,8 +15,6 @@ CarrierWave.configure do |config|
 
   config.fog_directory = 'freemarket72h' if Rails.env.production?
   config.fog_directory = 'https://s3-ap-northeast-1.amazonaws.com/freemarket72h' if Rails.env.development?
-
-
 
 # 下の記載はローカル環境からS3に保存するもの仮置き
   # config.fog_directory  = 'freemarket72h'
