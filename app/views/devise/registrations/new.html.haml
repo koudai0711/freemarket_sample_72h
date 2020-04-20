@@ -113,13 +113,12 @@
             = f.text_field :first_name_kana, autofocus: true, class: "form-box", placeholder: "例）たろう"
 
           .field
-            = f.label :birth_day, '生年月日', class: 'birthday' 
+            = f.label :birth_day, '生年月日', class: 'birth_day' 
             %span.form-require 必須
             %br/
-            != sprintf(f.date_select(:birth_day, prefix:'birth_day',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+            = f.date_select :birth_day, {prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900}, {class: 'birth_day'}
 
-
-          = f.fields_for :delivery_destination do |k|
+          = f.fields_for :addresses do |k|
             商品送付先住所
             .field
               .signup-label
@@ -144,10 +143,10 @@
               = k.text_field :postal_code, placeholder: '郵便番号 例：000-0000', class: 'postal_code'
 
             .field
-              = k.label :prefecture, '都道府県', class: 'signup-label'
+              = k.label :prefecture_id, '都道府県', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.text_field :prefecture, placeholder: '都道府県 例：東京都', class: 'prefecture'
+              = k.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :name), {}, {class: 'prefecture'}
 
             .field
               = k.label :city, '市区町村', class: 'signup-label'
