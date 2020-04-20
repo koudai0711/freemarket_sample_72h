@@ -158,60 +158,28 @@
         .contents__category_box_section_link
           = link_to "#" do
             新規投稿商品
-    .contents__category_post
-      .contents__category_post_box
-        .contents__category_post_box_iamge
-          = link_to products_path do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
 
-        .contents__category_post_box_article
-          %lu.contents__category_post_box_article_detail
-            %li
-              %h3 product3
-            %li 
-              30000円
-            %li.contents__category_post_box_article_detail_tax
-              (税込)
-          .contents__category_post_box_article_star
-            .contents__category_post_box_article_star_icon
-              = icon('fa', 'star')
-            .contents__category_post_box_article_star_namber
-              0
-      
-      .contents__category_post_box
-        .contents__category_post_box_iamge
-          = link_to "#" do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
-        .contents__category_post_box_article
-          %lu.contents__category_post_box_article_detail
-            %li
-              %h3 product3
-            %li 
-              30000円
-            %li.contents__category_post_box_article_detail_tax
-              (税込)
-          .contents__category_post_box_article_star
-            .contents__category_post_box_article_star_icon
-              = icon('fa', 'star')
-            .contents__category_post_box_article_star_namber
-              0
-      .contents__category_post_box
-        .contents__category_post_box_iamge
-          = link_to "#" do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
-        .contents__category_post_box_article
-          %lu.contents__category_post_box_article_detail
-            %li
-              %h3 product3
-            %li 
-              30000円
-            %li.contents__category_post_box_article_detail_tax
-              (税込)
-          .contents__category_post_box_article_star
-            .contents__category_post_box_article_star_icon
-              = icon('fa', 'star')
-            .contents__category_post_box_article_star_namber
-              0
+    .contents__category_post
+      - @products.first(6).each do |p|
+        .contents__category_post_box
+          .contents__category_post_box_iamge
+            - @images.each.with_index(1) do |image,i|
+              - if i == 1
+                = image_tag "#{image.src}"
+          .contents__category_post_box_article
+            %lu.contents__category_post_box_article_detail
+              %li
+                %h3 
+                  = p.name
+              %li 
+                = p.price
+              %li.contents__category_post_box_article_detail_tax
+                (税込)
+            .contents__category_post_box_article_star
+              .contents__category_post_box_article_star_icon
+                = icon('fa', 'star')
+              .contents__category_post_box_article_star_namber
+                0
   %aside.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
