@@ -16,9 +16,10 @@
               = image_tag "/assets/material/pict/IMG_8870.JPG", class: "headerLogo", size:"80x80"
             .inputArea__input_product_area_text
               .inputArea__input_product_area_text_name
-                ELENDEEK
+                = @product.name
               .inputArea__input_product_area_text_price
-                ¥7,000 
+                ¥
+                = @product.price
                 %span （税込）送料込み
         .inputArea__input_details
           .inputArea__input_details_box
@@ -27,7 +28,8 @@
                 .inputArea__input_details_box_inner_price_text
                   支払い金額
                 .inputArea__input_details_box_inner_price_value
-                  ¥7,000
+                  ¥
+                  = @product.price
               %li.inputArea__input_details_box_inner_point
                 =check_box_tag :check1
                 =label_tag :check1, "ポイントを使用 (所持ポイント: P0)",class: "text"
@@ -57,9 +59,10 @@
                   神奈川県 川崎市宮前区 
                   %br/
                   森下 幸大
-              %li.inputArea__input_details_box_inner_btn
-                .inputArea__input_details_box_inner_btn_submit 
-                  購入する
+                %li.inputArea__input_details_box_inner_btn
+                  = link_to pay_product_path(@product.id), method: :post do
+                    .inputArea__input_details_box_inner_btn_submit
+                      購入する
     .copyright 
       .copyright_policy
         .copyright_policy_blank
@@ -74,3 +77,4 @@
           = image_tag "/assets/logo-white.png", class: "copyright_logo"
       .copyright_font
         &copy; Team H ,inc
+

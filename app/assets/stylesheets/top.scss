@@ -565,6 +565,18 @@
         height: 250px;
         width: 220px;
         margin-right: 40px;
+        position: relative;
+        &_souldout{
+          height: 39px;
+          width: 100%;
+          top: 60px;
+          color: white;
+          text-align: center;
+          background-color: red;
+          position: absolute;
+          font-size: 39px;
+          opacity: 0.5;
+        }
         &_iamge{
           height: 150px;
           width: 220px;

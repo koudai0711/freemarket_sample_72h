@@ -60,6 +60,7 @@
               = link_to "ログイン", new_user_session_path
             %li.listsRight__item.listsRight__item--new
               = link_to "新規会員登録", new_user_registration_path
+
 .contents
   %ul.contents__box
     %li.contents__box_one
@@ -161,9 +162,15 @@
           = link_to "#" do
             新規投稿商品
 
+
+
+
+
     .contents__category_post
       - @products.first(6).each do |p|
         .contents__category_post_box
+          - if p.buyer_id
+            .contents__category_post_box_souldout SOLDOUT
           .contents__category_post_box_iamge
             - @images.each.with_index(1) do |image,i|
               - if i == 1
@@ -182,6 +189,10 @@
                 = icon('fa', 'star')
               .contents__category_post_box_article_star_namber
                 0
+
+
+
+                
   %aside.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
@@ -229,6 +240,6 @@
 
 .footer_camera
   .footer_camera_btn
-    = link_to '出品', new_product_path 
+    = link_to '出品する', new_product_path 
   %span
     = image_tag "/assets/material/icon/icon_camera.png", class: "icon-camera"

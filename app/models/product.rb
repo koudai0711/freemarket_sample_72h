@@ -1,3 +1,4 @@
+
 class Product < ApplicationRecord 
   belongs_to :user 
   belongs_to :category
@@ -17,5 +18,4 @@ class Product < ApplicationRecord
   validates :shipping_cost, presence: true
   validates :prefecture_id, presence: true
   validates :shipping_days, presence: true
-  validates :images, presence: true
 end
