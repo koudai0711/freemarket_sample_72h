@@ -1,0 +1,23 @@
+.card{
+  padding: 24px 0;
+  border-bottom: solid 2px #f8f8f8;
+  border-top: solid 2px #f8f8f8;
+  color: #000;
+  &_content{
+    display: flex;
+    justify-content: space-between;
+    &_text{
+      font-size: 14px;
+    }
+    &_change{
+      color: #33CCFF;
+    }
+  }
+  &_date{
+    margin-top: 15px;
+    line-height: 20px;
+  }
+  &_visa{
+    margin-top: 15px;
+  }
+}
