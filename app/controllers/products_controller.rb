@@ -18,9 +18,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @product.update(product_params)
-      redirect_to root_path
+      redirect_to @product
     else
       render :edit
     end
@@ -36,7 +39,6 @@ class ProductsController < ApplicationController
   def show
     @image = Image.where(product_id: params[:id])
   end
-  
 
   def product_params
     params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
