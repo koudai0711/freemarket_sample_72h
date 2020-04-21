@@ -1,0 +1,23 @@
+.footer_camera {
+  background-color: #3ccace;
+  height: 116px;
+  width: 120px;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  border-radius: 4%;
+  text-align: center;
+  &_btn {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 15px 0 5px;
+    a{
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+  .icon-camera {
+    height: 54px;
+    width: 54px;
+  }
+}
