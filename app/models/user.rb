@@ -12,7 +12,9 @@ class User < ApplicationRecord
   has_many :addresses, dependent: :destroy
   accepts_nested_attributes_for :addresses
 
-  validates :nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_day, presence: true
+  validates :nickname, :birth_day, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, message: "英文字のみが使えます" }
+  validates :last_name, :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+  validates :last_name_kana, :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
 end
 
