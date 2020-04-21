@@ -81,6 +81,9 @@ end
   gem 'carrierwave'
   gem 'mini_magick'
   gem 'fog-aws'
-
   gem 'pry-rails'
+<<<<<<< HEAD
   gem 'ancestry'
+=======
+  gem 'payjp'
+>>>>>>> e760345bb72f59a24d19e1c3a2666afd730b9c16

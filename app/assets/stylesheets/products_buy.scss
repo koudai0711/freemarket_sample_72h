@@ -83,7 +83,7 @@
             font-size: 14px;
             font-weight: bold;
             display: flex;
-            margin: 0 150px;
+            margin: 0 175px;
             ul{
               list-style: none;
             }
@@ -183,13 +183,8 @@
         &_blank {
           display: flex;
           justify-content: center;
-          &_privacy {
-          }
           &_terms {
             margin: 0 20px;
-          }
-          &_notation{
-            
           }
         }
       }

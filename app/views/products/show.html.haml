@@ -60,7 +60,6 @@
                   = link_to "ログイン", new_user_session_path
                %li.listsRight__item.listsRight__item--new
                   = link_to "新規会員登録", new_user_registration_path
-
 .breadCrumbs
    %ul.breadCrumbs-lists
       %li.lists-first
@@ -158,13 +157,14 @@
                         = link_to "商品を購入する", "#", class: "pBtn"
             
             .optionalArea2
-               - if user_signed_in? && current_user.id == @product.user_id
-                  %ul.edit
-                     %li.editBtn
-                        = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
-                  %ul.delete
-                     %li.deleteBtn
-                        = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "dBtn"
+
+               -# - if user_signed_in? && current_user.id == @product.user_id
+               %ul.edit
+                  %li.editBtn
+                     = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
+               %ul.delete
+                  %li.deleteBtn
+                     = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "dBtn"
 
    .commentBox
       %ul.commentContents
