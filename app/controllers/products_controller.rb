@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
     @address = Prefecture.all
+    
   end
 
   def create

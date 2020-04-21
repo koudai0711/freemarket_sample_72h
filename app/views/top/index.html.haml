@@ -4,14 +4,14 @@
       %h1.icon
         %span.image
           = link_to root_path do
-            = image_tag "/assets/material/logo/logo.png", class: "image-logo"
+            = image_tag asset_path("/images/logo.png"), class: "image-logo"
         .searchBox
           %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
             %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
             %button{type: "submit"}
               %span.image
-                = image_tag "material/icon/icon-search 1.png", class: "image"
+                = image_tag "icon-search 1.png", class: "image"
               %input{name: "authenticity_token", type: "hidden", value: "EQAv/S2rsDeHLoEo0kvb8hCULr0aZqsDDDY9yAzJ7ka+IJjgqdcq02xFyskZAQGb+80qKeJTa3Y4QzPFlX3wNQ=="}/
         %ul.resultLists
       .nav
@@ -51,6 +51,8 @@
             %ul.brandsPulldown.displayNone
         %ul.listsRight
           - if user_signed_in?
+            %li.listsRight__item.listsRight__item--login
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
             %li.listsRight__item.listsRight__item--mypage
               = link_to "マイページ", '#'
           - else
@@ -133,7 +135,7 @@
           FURIMAの特徴
       %ul.contents__box_four_image
         %li.contents__box_four_image_left
-          = image_tag "/assets/material/icon/icon-01.png", size: '220x340'
+          = image_tag asset_path("/assets/material/icon/icon-01.png"), size: '220x340'
           .contents__box_four_image_left_article
             簡単に売り買いできる
           .contents__box_four_image_left_note
@@ -158,60 +160,28 @@
         .contents__category_box_section_link
           = link_to "#" do
             新規投稿商品
-    .contents__category_post
-      .contents__category_post_box
-        .contents__category_post_box_iamge
-          = link_to products_path do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
 
-        .contents__category_post_box_article
-          %lu.contents__category_post_box_article_detail
-            %li
-              %h3 product3
-            %li 
-              30000円
-            %li.contents__category_post_box_article_detail_tax
-              (税込)
-          .contents__category_post_box_article_star
-            .contents__category_post_box_article_star_icon
-              = icon('fa', 'star')
-            .contents__category_post_box_article_star_namber
-              0
-      
-      .contents__category_post_box
-        .contents__category_post_box_iamge
-          = link_to "#" do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
-        .contents__category_post_box_article
-          %lu.contents__category_post_box_article_detail
-            %li
-              %h3 product3
-            %li 
-              30000円
-            %li.contents__category_post_box_article_detail_tax
-              (税込)
-          .contents__category_post_box_article_star
-            .contents__category_post_box_article_star_icon
-              = icon('fa', 'star')
-            .contents__category_post_box_article_star_namber
-              0
-      .contents__category_post_box
-        .contents__category_post_box_iamge
-          = link_to "#" do
-            = image_tag "/assets/material/pict/pict-reason-01.jpg",size: "220x150"
-        .contents__category_post_box_article
-          %lu.contents__category_post_box_article_detail
-            %li
-              %h3 product3
-            %li 
-              30000円
-            %li.contents__category_post_box_article_detail_tax
-              (税込)
-          .contents__category_post_box_article_star
-            .contents__category_post_box_article_star_icon
-              = icon('fa', 'star')
-            .contents__category_post_box_article_star_namber
-              0
+    .contents__category_post
+      - @products.first(6).each do |p|
+        .contents__category_post_box
+          .contents__category_post_box_iamge
+            - @images.each.with_index(1) do |image,i|
+              - if i == 1
+                = image_tag "#{image.src}"
+          .contents__category_post_box_article
+            %lu.contents__category_post_box_article_detail
+              %li
+                %h3 
+                  = p.name
+              %li 
+                = p.price
+              %li.contents__category_post_box_article_detail_tax
+                (税込)
+            .contents__category_post_box_article_star
+              .contents__category_post_box_article_star_icon
+                = icon('fa', 'star')
+              .contents__category_post_box_article_star_namber
+                0
   %aside.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
