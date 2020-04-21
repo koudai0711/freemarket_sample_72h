@@ -42,9 +42,12 @@
                 .inputArea__input_details_box_inner_card_date
                   クレジットカード
                   %br/
-                  ************7328
+                  = "**** **** **** " + @default_card_information.last4
                   %br/
-                  有効期限 07 / 24
+                  有効期限 
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
                 .inputArea__input_details_box_inner_card_visa
                   = image_tag "/assets/logo-white.png", class: "copyright_logo",size:"49x15"
               %li.inputArea__input_details_box_inner_address
