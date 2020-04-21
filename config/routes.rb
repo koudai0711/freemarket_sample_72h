@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, except: :show do
+  resources :products do
     member do
       get 'buy'
       post 'pay', to: 'products#pay'
