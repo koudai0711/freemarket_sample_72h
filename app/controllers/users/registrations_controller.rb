@@ -6,12 +6,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
+    @user.addresses.new
   end
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save!
       redirect_to root_path
+    else
+      # flash.now[:alert] = '必須項目を入力してください。'
+      render :new
     end
   end
 
@@ -74,6 +78,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_day)
+    params.require(:user).permit(:nickname, :email, :password, :last_name, :first_name, :last_name_kana, :first_name_kana, :birth_day,
+    addresses_attributes:[:address_last_name, :address_first_name, :address_last_name_kana, :address_first_name_kana, :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number])
   end
 end

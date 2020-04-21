@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   }
   root 'top#index'
   resources :top
+  resources :users, only: :show
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products do
+  resources :products, except: :show do
     member do
       get 'buy'
       post 'pay', to: 'products#pay'
@@ -24,5 +25,5 @@ Rails.application.routes.draw do
     end
   end
 
-
+  
 end

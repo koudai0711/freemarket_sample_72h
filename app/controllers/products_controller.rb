@@ -1,13 +1,12 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create,]
 
-  def show
-  end
-
+  before_action :set_product, except: [:index, :new, :create]
+  
   def new
     @product = Product.new
     @product.images.new
     @address = Prefecture.all
+    
   end
 
   def create
@@ -30,9 +29,8 @@ class ProductsController < ApplicationController
 
   def destroy
     if @product.destroy
-       redirect_to root_path
     else 
-       redirect_to root_path
+      redirect_to root_path
     end
   end
 
@@ -63,12 +61,15 @@ class ProductsController < ApplicationController
     @product_buyer= Product.find(params[:id])
     @product_buyer.update( buyer_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
+
+  def show
+    @image = Image.where(product_id: params[:id])
   end
 
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :status, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
+    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
   end
 
   def set_product

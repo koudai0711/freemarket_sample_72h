@@ -1,10 +1,9 @@
-
 %header.pcHeader
    .headerInner
       .mainHeader
          %h1.icon
             %span.image
-               = link_to "/" do
+               =link_to root_path do
                   = image_tag "/assets/logo.png", class: "image-logo"
          .searchBox
             %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
@@ -51,12 +50,16 @@
                = link_to "ブランド", "#",class: "brandBtn"
                %ul.brandsPulldown.displayNone
          %ul.listsRight
-            %li.listsRight__item.listsRight__item--login
-               = link_to "ログイン", "#"
-            %li.listsRight__item.listsRight__item--new
-               = link_to "新規会員登録", "#"
-
-   
+            - if user_signed_in?
+               %li.listsRight__item.listsRight__item--login
+                  = link_to "新規投稿", new_product_path
+               %li.listsRight__item.listsRight__item--new
+                  = link_to "ログアウト", destroy_user_session_path
+            - else 
+               %li.listsRight__item.listsRight__item--login
+                  = link_to "ログイン", new_user_session_path
+               %li.listsRight__item.listsRight__item--new
+                  = link_to "新規会員登録", new_user_registration_path
 .breadCrumbs
    %ul.breadCrumbs-lists
       %li.lists-first
@@ -80,35 +83,31 @@
 
 .main 
    .main__content
-      .main__content-space
-      .main__content-productName
-         product
-      .main__content-image
+      .main__content__space
+      .main__content__productName
+         = @product.name
+      .main__content__image
          %span.image
-            = image_tag "/assets/Product_Details/main.png", size: "560x346"
-         .content-image-small
-            .small-left
-               %span.image
-                  = image_tag "/assets/Product_Details/left.png", size: "140x87"
-            .small-center
-               %span.image
-                  = image_tag "/assets/Product_Details/center.png", size: "140x87"
-            .small-right
-               %span.image
-                  = image_tag "/assets/Product_Details/right.png", size: "140x87"
-      .main__content-price
-         .content-price-sellingPrice
-            ¥20000
-         .content-price-tax
+            - @image.each do |image|
+               = image_tag image.src.url, class: "img1"
+               - break
+         .content__image__small
+            .content__iamge__small__left
+               - @image.each do |image|
+                  = image_tag image.src.url
+      .main__content__price
+         .main__content__price__sellingPrice
+            = @product.price
+         .main__content__price__tax
             （税込）送料込み
-      .main__content-description
-         .content-description-top
-            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+      .main__content__description
+         .main__content__description__top
+            = @product.description
             %table
                %tbody
                   %tr
                   %th 出品者
-                  %td hoge
+                  %td 
                   %tr
                   %th カテゴリー
                   %td
@@ -120,22 +119,27 @@
                   %tr
                   %th ブランド
                   %td
+                     = @product.brand
                   %tr
                   %th 商品のサイズ
                   %td
+                     = @product.size
                   %tr
                   %th 商品の状態
-                  %td 新品/未使用
+                  %td 
+                     = @product.status
                   %tr
                   %th 配送料の負担
-                  %td 着払い(購入者負担)
+                  %td 
+                     = @product.shipping_cost
                   %tr
                   %th 発送元の地域
                   %td 
-                     %a{href: "#"} 青森県
+                     = Prefecture.find(@product.prefecture_id).name
                   %tr 
                   %th 発送日の目安
-                  %td 1~2で発送
+                  %td 
+                     = @product.shipping_days
             .optionalArea
                %ul
                   %li#likeBtn.optionalBtn.likeBtn
@@ -143,22 +147,23 @@
                      お気に入り 0
                %ul.optional
                   %li.optionalBtn
-                     = link_to "#"
                      %i.fa.fa-flag
                      不適切な商品の通報
+
             .purchaseArea 
-               -# - if user_signed_in? && current_user.id == @product.user_id
-               %ul.purchase
-                  %li.purchaseBtn
-                     = link_to "商品を購入する", "#", class: "pBtn"
+               - if user_signed_in?
+                  %ul.purchase
+                     %li.purchaseBtn
+                        = link_to "商品を購入する", "#", class: "pBtn"
+            
             .optionalArea2
-               -# - if user_signed_in? && current_user.id == @product.user_id
-               %ul.edit
-                  %li.editBtn
-                     = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
-               %ul.delete
-                  %li.deleteBtn
-                     = link_to "商品を削除する", product_path(@product.id), class: "dBtn"
+               - if user_signed_in? && current_user.id == @product.user_id
+                  %ul.edit
+                     %li.editBtn
+                        = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
+                  %ul.delete
+                     %li.deleteBtn
+                        = link_to "商品を削除する", product_path(@product.id), method: :delete, class: "dBtn"
    .commentBox
       %ul.commentContents
       %form#new_comment.new_comment{"accept-charset" => "UTF-8", action: "#", method: "post"}
