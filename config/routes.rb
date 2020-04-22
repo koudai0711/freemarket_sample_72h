@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   }
   root 'top#index'
   resources :top
-  resources :products, except: :show
+  resources :products
   resources :users, only: :show
 end
