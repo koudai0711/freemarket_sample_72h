@@ -1,54 +1,32 @@
 = render "layouts/header"
-= render "layouts/category"
 .haikei
   .mypage-container
     .main-content
-      .mypage-user
-        .mypage-user__box
-          .mypage-user__icon
-          .mypage-user__name
-            kuku
-          .mypage-user__number
-            評価 0 出品数 0
-      .mypage-tab-box1
-        .mypage-tab-box1__tabs
-          .a-active
-            お知らせ
-          .a
-            やることリスト
-        .mypage-tab-box1__content
-          .mypage-item__link
-            .figure
-            .mypage-item__body
-              .mypage-item__text
-                事務局から個別メッセージ「ログイン」
-                .time
-                  6日前
-            %i.fas.fa-chevron-right
-          .mypage-item__link
-            .figure
-            .mypage-item__body
-              .mypage-item__text
-                事務局から個別メッセージ「ログイン」
-                .time
-                  6日前
-            %i.fas.fa-chevron-right
-          .mypage-go-ichiran
-            .mypage-go-ichiran__btn
-              一覧を見る
-
       .mypage-tab-box2
         .mypage-tab-box2__head
-          購入した商品
+          クレジットカード登録
         .mypage-tab-box2__tabs
-          .a-active
-            取引中
-          .a
-            過去の取引
         .mypage-tab-box2__content
           .mypage-item__not-found
-            取引中の商品がありません
-
+            .card
+              .card_content
+                .card_content_text
+                  支払い方法
+                .card_content_change
+                  = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+                    %input{ type: "hidden", name: "card_id", value: "" }
+                    %button 削除する
+              .card_date
+                クレジットカード
+                %br/
+                = "**** **** **** " + @default_card_information.last4
+                %br/
+                有効期限 
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+              .card_visa
+                = image_tag "/assets/logo-white.png", class: "copyright_logo",size:"49x15"
 
     .left-content
       .mypage-nav
@@ -132,5 +110,5 @@
             ログアウト
             %i.fas.fa-chevron-right
 
-  = render "layouts/footer"
-  = render "layouts/camera"
+= render "layouts/footer"
+= render "layouts/camera"

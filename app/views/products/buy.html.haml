@@ -4,7 +4,7 @@
       .logoArea
         %span
           = link_to "/" do
-            = image_tag "/assets/material/logo/logo.png", class: "headerLogo"
+            = image_tag asset_path("/images/logo.png"), class: "headerLogo"
     .inputArea
       .inputArea__input
         .inputArea__input_title
@@ -13,12 +13,13 @@
         .inputArea__input_product
           .inputArea__input_product_area
             .inputArea__input_product_area_image
-              = image_tag "/assets/material/pict/IMG_8870.JPG", class: "headerLogo", size:"80x80"
+              = image_tag asset_path("/images/IMG_8870.JPG"), class: "headerLogo", size:"80x80"
             .inputArea__input_product_area_text
               .inputArea__input_product_area_text_name
-                ELENDEEK
+                = @product.name
               .inputArea__input_product_area_text_price
-                ¥7,000 
+                ¥
+                = @product.price
                 %span （税込）送料込み
         .inputArea__input_details
           .inputArea__input_details_box
@@ -27,7 +28,8 @@
                 .inputArea__input_details_box_inner_price_text
                   支払い金額
                 .inputArea__input_details_box_inner_price_value
-                  ¥7,000
+                  ¥
+                  = @product.price
               %li.inputArea__input_details_box_inner_point
                 =check_box_tag :check1
                 =label_tag :check1, "ポイントを使用 (所持ポイント: P0)",class: "text"
@@ -40,11 +42,14 @@
                 .inputArea__input_details_box_inner_card_date
                   クレジットカード
                   %br/
-                  ************7328
+                  = "**** **** **** " + @default_card_information.last4
                   %br/
-                  有効期限 07 / 24
+                  有効期限 
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
                 .inputArea__input_details_box_inner_card_visa
-                  = image_tag "/assets/logo-white.png", class: "copyright_logo",size:"49x15"
+                  = image_tag asset_path("/images/logo-white.png"), class: "copyright_logo",size:"49x15"
               %li.inputArea__input_details_box_inner_address
                 .inputArea__input_details_box_inner_address_content
                   .inputArea__input_details_box_inner_address_content_text
@@ -57,9 +62,10 @@
                   神奈川県 川崎市宮前区 
                   %br/
                   森下 幸大
-              %li.inputArea__input_details_box_inner_btn
-                .inputArea__input_details_box_inner_btn_submit 
-                  購入する
+                %li.inputArea__input_details_box_inner_btn
+                  = link_to pay_product_path(@product.id), method: :post do
+                    .inputArea__input_details_box_inner_btn_submit
+                      購入する
     .copyright 
       .copyright_policy
         .copyright_policy_blank
@@ -71,6 +77,7 @@
             特定商取引に関する表記
       .copyright_logo
         %span.image
-          = image_tag "/assets/logo-white.png", class: "copyright_logo"
+          = image_tag asset_path("/images/logo-white.png"), class: "copyright_logo"
       .copyright_font
         &copy; Team H ,inc
+

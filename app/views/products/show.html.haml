@@ -60,7 +60,6 @@
                   = link_to "ログイン", new_user_session_path
                %li.listsRight__item.listsRight__item--new
                   = link_to "新規会員登録", new_user_registration_path
-
 .breadCrumbs
    %ul.breadCrumbs-lists
       %li.lists-first
@@ -112,7 +111,7 @@
                   %tr
                   %th カテゴリー
                   %td
-                     = link_to "メンズ","#"
+                     = @product.category.name
                      %br/
                      = link_to "ジャケット/アウター", "#"
                      %br/
