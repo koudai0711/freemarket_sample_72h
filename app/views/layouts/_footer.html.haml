@@ -5,10 +5,10 @@
     .inner__iconn
       %span.image
         = link_to "#" do
-          = image_tag "/assets/badge/app-store.png", class: "aBtn"
+          = image_tag asset_path("/assets/badge/app-store.png"), class: "aBtn"
       %span.image
         = link_to "#" do
-          = image_tag "/assets/badge/google.png", class: "gBtn"
+          = image_tag asset_path("/assets/badge/google.png"), class: "gBtn"
 .footer
   %ul.contents_list
     %li.content
@@ -40,5 +40,5 @@
           = link_to "お知らせ", "#"
   .footer__logo
     %span.image
-      = image_tag "/assets/material/logo/logo-white.png", class: "footerLogo"
+      = image_tag asset_path("/assets/material/logo/logo-white.png"), class: "footerLogo"
   %p © FURIMA
