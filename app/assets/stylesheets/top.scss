@@ -383,6 +383,10 @@
       height: 250px;
       justify-content: center;
       flex-wrap: wrap;
+      a{
+        text-decoration: none;
+        color: #000;
+      }
       &_box{
         height: 250px;
         width: 220px;
