@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions'
   }
   root 'top#index'
-  resources :products
-  resources :top, only: :index
+
   resources :users, only: :show
   resources :cards, only: [:new, :show] do
     collection do
@@ -20,10 +19,5 @@ Rails.application.routes.draw do
       post 'pay', to: 'products#pay'
       get 'done', to: 'products#done'
     end
-    collection do  
-      
-    end
   end
-
-  
 end
