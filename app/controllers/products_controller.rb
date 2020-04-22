@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path
@@ -73,7 +74,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, images_attributes: [:src])
+    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, :category_id, images_attributes: [:src])
   end
 
   def set_product
