@@ -1,10 +1,114 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+= render "layouts/header"
+.haikei
+  .mypage-container
+    .main-content
+      .mypage-tab-box2
+        .mypage-tab-box2__head
+          クレジットカード登録
+        .mypage-tab-box2__tabs
+        .mypage-tab-box2__content
+          .mypage-item__not-found
+            .card
+              .card_content
+                .card_content_text
+                  支払い方法
+                .card_content_change
+                  = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+                    %input{ type: "hidden", name: "card_id", value: "" }
+                    %button 削除する
+              .card_date
+                クレジットカード
+                %br/
+                = "**** **** **** " + @default_card_information.last4
+                %br/
+                有効期限 
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+              .card_visa
+                = image_tag "/assets/logo-white.png", class: "copyright_logo",size:"49x15"
+
+    .left-content
+      .mypage-nav
+        .mypage-nav__list
+          .mypage-nav__list-item
+            マイページ
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            お知らせ
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            やることリスト
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            いいね！一覧
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            出品する
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            下書き一覧
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            出品した商品ー出品中
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            出品した商品ー取引中
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            出品した商品ー売却済み
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            購入した商品ー取引中
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            購入した商品ー過去の取引
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            ニュース一覧
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            評価一覧
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            ガイド
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            お問い合わせ
+            %i.fas.fa-chevron-right
+        .mypage-nav__title
+          メルペイ
+        .mypage-nav__list
+          .mypage-nav__list-item
+            売上・振り込み申請
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            ポイント
+            %i.fas.fa-chevron-right
+        .mypage-nav__title
+          設定
+        .mypage-nav__list
+          .mypage-nav__list-item
+            プロフィール
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            発送元・お届け先住所変更
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            支払い方法
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            メール/パスワード
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            本人確認
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            電話番号の確認
+            %i.fas.fa-chevron-right
+          .mypage-nav__list-item
+            ログアウト
+            %i.fas.fa-chevron-right
+
+= render "layouts/footer"
+= render "layouts/camera"
