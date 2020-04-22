@@ -162,6 +162,8 @@
           = link_to "#" do
             新規投稿商品
 
+
+
     .contents__category_post
       - @products.first(6).each do |p|
         .contents__category_post_box
@@ -178,6 +180,7 @@
                   = p.name
               %li 
                 = p.price
+                円
               %li.contents__category_post_box_article_detail_tax
                 (税込)
             .contents__category_post_box_article_star
@@ -185,6 +188,9 @@
                 = icon('fa', 'star')
               .contents__category_post_box_article_star_namber
                 0
+
+
+
   %aside.appBanner
     .inner
       %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
