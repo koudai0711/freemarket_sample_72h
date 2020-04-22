@@ -11,17 +11,18 @@
           .inner__icon
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/app-store.png", class: "aBtn"
+                = image_tag asset_path("/images/app-store.png"), class: "aBtn"
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/google.png", class: "gBtn"
+                = image_tag asset_path("/images/google.png"), class: "gBtn"
+
     %li.contents__box_two
       .contents__box_two_title
         %h2.contents__box_two_title_feature
           FURIMAが選ばれる3つの理由
       %ul.contents__box_two_image
         %li.contents__box_two_image_left
-          = image_tag "/assets/material/pict/pict-reason-01.jpg", size: '300x300'
+          = image_tag asset_path("/images/pict-reason-01.jpg"), size: '300x300'
           %p.contents__box_two_image_left_one
             1
           .contents__box_two_image_left_article
@@ -31,7 +32,7 @@
             スマホで入力するだけで簡単に出品できる！
 
         %li.contents__box_two_image_center
-          = image_tag "/assets/material/pict/pict-reason-02.jpg", size: '300x300'
+          = image_tag asset_path("/images/pict-reason-02.jpg"), size: '300x300'
           %p.contents__box_two_image_center_two
             2
           .contents__box_two_image_center_article
@@ -41,7 +42,7 @@
             めんどくさい入力は必要なく、検索も購入もスムーズ！
 
         %li.contents__box_two_image_right
-          = image_tag "/assets/material/pict/pict-reason-03.jpg", size: '300x300'
+          = image_tag asset_path("/images/pict-reason-03.jpg"), size: '300x300'
           %p.contents__box_two_image_right_three
             3
           .contents__box_two_image_right_article
@@ -64,29 +65,29 @@
           .inner__icon
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/app-store.png", class: "aBtn"
+                = image_tag asset_path("/images/app-store.png"), class: "aBtn"
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/google.png", class: "gBtn"
+                = image_tag asset_path("/images/google.png"), class: "gBtn"
     %li.contents__box_four
       .contents__box_four_title
         %h2.contents__box_four_title_feature
           FURIMAの特徴
       %ul.contents__box_four_image
         %li.contents__box_four_image_left
-          = image_tag asset_path("/assets/material/icon/icon-01.png"), size: '220x340'
+          = image_tag asset_path("/images/icon-01.png"), size: '220x340'
           .contents__box_four_image_left_article
             簡単に売り買いできる
           .contents__box_four_image_left_note
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         %li.contents__box_four_image_center
-          = image_tag "/assets/material/icon/icon-03.png", size: '220x340'
+          = image_tag asset_path("/images/icon-03.png"), size: '220x340'
           .contents__box_four_image_center_article
             売上金は即日振込みに対応
           .contents__box_four_image_center_note
             午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
         %li.contents__box_four_image_right
-          = image_tag "/assets/material/icon/icon-04.png", size: '220x340'
+          = image_tag asset_path("/images/icon-04.png"), size: '220x340'
           .contents__box_four_image_right_article
             様々な支払いに対応
           .contents__box_four_image_right_note
