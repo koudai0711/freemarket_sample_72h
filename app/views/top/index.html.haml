@@ -101,25 +101,25 @@
             新規投稿商品
     .contents__category_post
       - @products.first(6).each do |p|
-        .contents__category_post_box
-          - if p.buyer_id
-            .contents__category_post_box_souldout SOLDOUT
-          .contents__category_post_box_iamge
-            =link_to products_path do
+        =link_to "#" do
+          .contents__category_post_box
+            - if p.buyer_id
+              .contents__category_post_box_souldout SOLDOUT
+            .contents__category_post_box_iamge
               = image_tag "#{p.images.first.src}"
-          .contents__category_post_box_article
-            %lu.contents__category_post_box_article_detail
-              %li
-                %h3 
-                  = p.name
-              %li 
-                = p.price
-              %li.contents__category_post_box_article_detail_tax
-                (税込)
-            .contents__category_post_box_article_star
-              .contents__category_post_box_article_star_icon
-                = icon('fa', 'star')
-              .contents__category_post_box_article_star_namber
-                0
+            .contents__category_post_box_article
+              %lu.contents__category_post_box_article_detail
+                %li
+                  %h3 
+                    = p.name
+                %li 
+                  = p.price
+                %li.contents__category_post_box_article_detail_tax
+                  (税込)
+              .contents__category_post_box_article_star
+                .contents__category_post_box_article_star_icon
+                  = icon('fa', 'star')
+                .contents__category_post_box_article_star_namber
+                  0
   = render "layouts/footer"
 = render "layouts/camera"
