@@ -64,8 +64,8 @@ class ProductsController < ApplicationController
     )
     @product_buyer= Product.find(params[:id])
     @product_buyer.update( buyer_id: current_user.id)
-    redirect_to action: 'done'
-  end#完了画面に移動
+    redirect_to action: 'done' #完了画面に移動
+  end
 
   def show
     @image = Image.where(product_id: params[:id])
