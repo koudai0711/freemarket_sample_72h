@@ -99,20 +99,14 @@
         .contents__category_box_section_link
           = link_to "#" do
             新規投稿商品
-
-
-
-
-
     .contents__category_post
       - @products.first(6).each do |p|
         .contents__category_post_box
           - if p.buyer_id
             .contents__category_post_box_souldout SOLDOUT
           .contents__category_post_box_iamge
-            - @images.each.with_index(1) do |image,i|
-              - if i == 1
-                = image_tag "#{image.src}"
+            =link_to products_path do
+              = image_tag "#{p.images.first.src}"
           .contents__category_post_box_article
             %lu.contents__category_post_box_article_detail
               %li

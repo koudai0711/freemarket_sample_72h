@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
     end
   end
-
   resources :products do
     member do
       get 'buy'
