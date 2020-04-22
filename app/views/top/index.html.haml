@@ -105,7 +105,8 @@
           - if p.buyer_id
             .contents__category_post_box_souldout SOLDOUT
           .contents__category_post_box_iamge
-            = image_tag "#{p.images.first.src}"
+            =link_to products_path do
+              = image_tag "#{p.images.first.src}"
           .contents__category_post_box_article
             %lu.contents__category_post_box_article_detail
               %li
@@ -113,6 +114,7 @@
                   = p.name
               %li 
                 = p.price
+                円
               %li.contents__category_post_box_article_detail_tax
                 (税込)
             .contents__category_post_box_article_star
