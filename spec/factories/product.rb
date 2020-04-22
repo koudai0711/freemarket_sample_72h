@@ -8,5 +8,6 @@ FactoryBot.define do
     shipping_cost   {"100"}
     prefecture_id   {"1"}
     shipping_days   {"1"}
+    size            {"XS"}
   end
 end
