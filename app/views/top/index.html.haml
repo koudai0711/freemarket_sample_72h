@@ -1,66 +1,4 @@
-%header.pcHeader
-  .headerInner
-    .mainheader
-      %h1.icon
-        %span.image
-          = link_to root_path do
-            = image_tag asset_path("/images/logo.png"), class: "image-logo"
-        .searchBox
-          %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
-            %input{name: "utf8", type: "hidden", value: "✓"}/
-            %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
-            %button{type: "submit"}
-              %span.image
-                = image_tag "icon-search 1.png", class: "image"
-              %input{name: "authenticity_token", type: "hidden", value: "EQAv/S2rsDeHLoEo0kvb8hCULr0aZqsDDDY9yAzJ7ka+IJjgqdcq02xFyskZAQGb+80qKeJTa3Y4QzPFlX3wNQ=="}/
-        %ul.resultLists
-      .nav
-        %ul.listsLeft
-          %li.listsLeft__item.listsLeft__item--first
-            = link_to "カテゴリー", "#", class: "catBtn"
-            .tree.displayNone
-              %ul.categoryTree
-                %li.categoryTree--item
-                  = link_to "レディース","#"
-                  %li.categoryTree--item
-                  = link_to "メンズ","#"
-                  %li.categoryTree--item
-                  = link_to "ベビー・キッズ","#"
-                  %li.categoryTree--item
-                  = link_to "インテリア・住まい・小物","#" 
-                  %li.categoryTree--item
-                  = link_to " 本・音楽・ゲーム","#"
-                  %li.categoryTree--item
-                  = link_to "おもちゃ・ホビー・グッズ","#" 
-                  %li.categoryTree--item
-                  = link_to "コスメ・香水・美容","#" 
-                  %li.categoryTree--item
-                  = link_to "家電・スマホ・カメラ","#" 
-                  %li.categoryTree--item
-                  = link_to " スポーツ・レジャー","#"
-                  %li.categoryTree--item
-                  = link_to " ハンドメイド","#"
-                  %li.categoryTree--item
-                  = link_to "チケット","#"
-                  %li.categoryTree--item
-                  = link_to " 自動車・オートバイ","#"
-                  %li.categoryTree--item
-                  = link_to "その他","#"
-          %li.listsLeft__item
-            = link_to "ブランド", "#",class: "brandBtn"
-            %ul.brandsPulldown.displayNone
-        %ul.listsRight
-          - if user_signed_in?
-            %li.listsRight__item.listsRight__item--login
-              = link_to "ログアウト", destroy_user_session_path, method: :delete
-            %li.listsRight__item.listsRight__item--mypage
-              = link_to "マイページ", '#'
-          - else
-            %li.listsRight__item.listsRight__item--login
-              = link_to "ログイン", new_user_session_path
-            %li.listsRight__item.listsRight__item--new
-              = link_to "新規会員登録", new_user_registration_path
-
+= render "layouts/header"
 .contents
   %ul.contents__box
     %li.contents__box_one
@@ -73,17 +11,17 @@
           .inner__icon
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/app-store.png", class: "aBtn"
+                = image_tag asset_path("/images/app-store.png"), class: "aBtn"
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/google.png", class: "gBtn"
+                = image_tag asset_path("/images/google.png"), class: "gBtn"
     %li.contents__box_two
       .contents__box_two_title
         %h2.contents__box_two_title_feature
           FURIMAが選ばれる3つの理由
       %ul.contents__box_two_image
         %li.contents__box_two_image_left
-          = image_tag "/assets/material/pict/pict-reason-01.jpg", size: '300x300'
+          = image_tag asset_path("/images/pict-reason-01.jpg"), size: '300x300'
           %p.contents__box_two_image_left_one
             1
           .contents__box_two_image_left_article
@@ -93,7 +31,7 @@
             スマホで入力するだけで簡単に出品できる！
 
         %li.contents__box_two_image_center
-          = image_tag "/assets/material/pict/pict-reason-02.jpg", size: '300x300'
+          = image_tag asset_path("/images/pict-reason-02.jpg"), size: '300x300'
           %p.contents__box_two_image_center_two
             2
           .contents__box_two_image_center_article
@@ -103,7 +41,7 @@
             めんどくさい入力は必要なく、検索も購入もスムーズ！
 
         %li.contents__box_two_image_right
-          = image_tag "/assets/material/pict/pict-reason-03.jpg", size: '300x300'
+          = image_tag asset_path("/images/pict-reason-03.jpg"), size: '300x300'
           %p.contents__box_two_image_right_three
             3
           .contents__box_two_image_right_article
@@ -126,29 +64,29 @@
           .inner__icon
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/app-store.png", class: "aBtn"
+                = image_tag asset_path("/images/app-store.png"), class: "aBtn"
             %span.image
               = link_to "#" do
-                = image_tag "/assets/badge/google.png", class: "gBtn"
+                = image_tag asset_path("/images/google.png"), class: "gBtn"
     %li.contents__box_four
       .contents__box_four_title
         %h2.contents__box_four_title_feature
           FURIMAの特徴
       %ul.contents__box_four_image
         %li.contents__box_four_image_left
-          = image_tag asset_path("/assets/material/icon/icon-01.png"), size: '220x340'
+          = image_tag asset_path("/images/icon-01.png"), size: '220x340'
           .contents__box_four_image_left_article
             簡単に売り買いできる
           .contents__box_four_image_left_note
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         %li.contents__box_four_image_center
-          = image_tag "/assets/material/icon/icon-03.png", size: '220x340'
+          = image_tag asset_path("/images/icon-03.png"), size: '220x340'
           .contents__box_four_image_center_article
             売上金は即日振込みに対応
           .contents__box_four_image_center_note
             午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
         %li.contents__box_four_image_right
-          = image_tag "/assets/material/icon/icon-04.png", size: '220x340'
+          = image_tag asset_path("/images/icon-04.png"), size: '220x340'
           .contents__box_four_image_right_article
             様々な支払いに対応
           .contents__box_four_image_right_note
@@ -161,6 +99,8 @@
         .contents__category_box_section_link
           = link_to "#" do
             新規投稿商品
+
+
 
 
 
@@ -189,55 +129,6 @@
               .contents__category_post_box_article_star_namber
                 0
 
-
-
-  %aside.appBanner
-    .inner
-      %h2.inner__title だれでもかんたん、人生を変えるフリマアプリ
-      %p.inner__text 今すぐ無料ダウンロード！
-      .inner__iconn
-        %span.image
-          = link_to "#" do
-            = image_tag "/assets/badge/app-store.png", class: "aBtn"
-        %span.image
-          = link_to "#" do
-            = image_tag "/assets/badge/google.png", class: "gBtn"
-  .footer
-    %ul.contents_list
-      %li.content
-        %h2.content__head FURIMAについて
-        %ul
-          %li
-            = link_to "会社概要(運営会社)", "#"
-          %li
-            = link_to "プライバシーポリシー", "#"
-          %li
-            = link_to "FURIMA利用規約","#"
-          %li
-            = link_to "ポイントに関する特約", "#"
-      %li.content
-        %h2.content__head FURIMAを見る
-        %ul
-          %li
-            = link_to "カテゴリー一覧", "#"
-          %li
-            = link_to "ブランド一覧", "#" 
-      %li.content
-        %h2.content__head ヘルプ＆ガイド
-        %ul
-          %li
-            = link_to "FURIMAガイド", "#"
-          %li
-            = link_to "FURIMAロゴ利用ガイドライン", "#"
-          %li
-            = link_to "お知らせ", "#"
-    .footer__logo
-      %span.image
-        = image_tag "/assets/material/logo/logo-white.png", class: "footerLogo"
-    %p © FURIMA
-
-.footer_camera
-  .footer_camera_btn
-    = link_to '出品する', new_product_path 
-  %span
-    = image_tag "/assets/material/icon/icon_camera.png", class: "icon-camera"
+              
+  = render "layouts/footer"
+= render "layouts/camera"

@@ -4,14 +4,14 @@
       %h1.icon
         %span.image
           = link_to root_path do
-            = image_tag "/assets/material/logo/logo.png", class: "image-logo"
+            = image_tag asset_path("/images/logo.png"), class: "image-logo"
         .searchBox
           %form{"accept-charset" => "UTF-8", action: "#", method: "get"}
             %input{name: "utf8", type: "hidden", value: "✓"}/
             %input#searchInput.searchBox--input{name: "key", placeholder: "キーワードから探す"}/
             %button{type: "submit"}
               %span.image
-                = image_tag "material/icon/icon-search 1.png", class: "image"
+                = image_tag asset_path("/images/icon-search 1.png"), class: "image"
               %input{name: "authenticity_token", type: "hidden", value: "EQAv/S2rsDeHLoEo0kvb8hCULr0aZqsDDDY9yAzJ7ka+IJjgqdcq02xFyskZAQGb+80qKeJTa3Y4QzPFlX3wNQ=="}/
         %ul.resultLists
       .nav
@@ -51,8 +51,11 @@
             %ul.brandsPulldown.displayNone
         %ul.listsRight
           - if user_signed_in?
+            %li.listsRight__item.listsRight__item--login
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
             %li.listsRight__item.listsRight__item--mypage
-              = link_to "マイページ", '#'
+              = link_to  user_path(current_user) do
+                = "#{current_user.nickname}さんのマイページ"
           - else
             %li.listsRight__item.listsRight__item--login
               = link_to "ログイン", new_user_session_path

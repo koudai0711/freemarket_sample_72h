@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   :sessions => 'users/sessions'
   }
   root 'top#index'
-  resources :top
+  resources :top, only: :index
   resources :users, only: :show
   resources :cards, only: [:new, :show] do
     collection do

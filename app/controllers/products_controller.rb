@@ -39,11 +39,11 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:id])
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      redirect_to controller: "card", action: "new"
+      redirect_to controller: "cards", action: "new"
     else
       Payjp.api_key = Rails.application.credentials.payjp[:payjp_private_key]
       #保管した顧客IDでpayjpから情報取得
@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.payjp[:payjp_private_key]
     Payjp::Charge.create(
     :amount => @product.price, 
