@@ -105,8 +105,7 @@
           - if p.buyer_id
             .contents__category_post_box_souldout SOLDOUT
           .contents__category_post_box_iamge
-            =link_to products_path do
-              = image_tag "#{p.images.first.src}"
+            = image_tag "#{p.images.first.src}"
           .contents__category_post_box_article
             %lu.contents__category_post_box_article_detail
               %li
