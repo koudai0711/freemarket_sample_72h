@@ -13,7 +13,7 @@
         .inputArea__input_product
           .inputArea__input_product_area
             .inputArea__input_product_area_image
-              = image_tag asset_path("/images/IMG_8870.JPG"), class: "headerLogo", size:"80x80"
+              = image_tag "#{@product.images.first.src}", class: "headerLogo", size:"80x80"
             .inputArea__input_product_area_text
               .inputArea__input_product_area_text_name
                 = @product.name
