@@ -6,12 +6,12 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
     @address = Prefecture.all
-    
+    4.times { @product.images.build}
   end
 
   def create
-    # binding.pry
     @product = Product.new(product_params)
+
     if @product.save
       redirect_to root_path
     else
