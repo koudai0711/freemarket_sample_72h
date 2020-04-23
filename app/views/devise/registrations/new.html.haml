@@ -112,6 +112,8 @@
               %br
               = k.text_field :phone_number, placeholder: '電話番号', class: 'form-box'
 
-        .actions
-          = f.submit "Sign up"
+        .button-class
+          %button.login{type: "submit"} 新規登録
+          .actions
+            = f.submit "Sign up"
       = render "devise/shared/links"
