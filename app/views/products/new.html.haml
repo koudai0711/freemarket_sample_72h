@@ -12,17 +12,14 @@
             .inputArea__input_imageArea_top 
               出品画像
               .inputArea__input_imageArea_top_alert 必須
-            .inputArea__input_imageArea_describe 最大10枚までアップロードできます
+            .inputArea__input_imageArea_describe 最大5枚までアップロードできます
             .inputArea__input_imageArea_form
               #image-box
                 #previews
                 = f.fields_for :images do |i|
-                  .js-box{data: { index: i.index }}
-                    = i.file_field :src, class: "js-file"
-                    %br/
-                    %span.js-remove 削除
-              %label{for: "js-file"}
-                %i.fas.fa-camera
+                  = i.file_field :src, class: "js-file"
+                  %br/
+
             = render partial: 'form'
           .inputArea__input_productArea
             .inputArea__input_productArea_name
