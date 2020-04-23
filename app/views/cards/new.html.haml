@@ -13,17 +13,17 @@
       .mypage-nav
         .mypage-nav__list
           .mypage-nav__list-item
-            = link_to "マイページ", user_path(current_user)
+            = link_to "マイページ", user_path(current_user), class: "hoge"
             %i.fas.fa-chevron-right
           
         .mypage-nav__title
           設定
         .mypage-nav__list
           .mypage-nav__list-item
-            = link_to "支払い方法", "/cards/new"
+            = link_to "支払い方法", "/cards/new", class: "hoge"
             %i.fas.fa-chevron-right
           .mypage-nav__list-item
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "hoge"
             %i.fas.fa-chevron-right
 
 = render "layouts/footer"
