@@ -2,22 +2,20 @@
   background-color: #f5f5f5;
   .mypage-container {
     display: flex;
-    // margin: 40px 210px 0;
-    // padding-bottom: 40px;
     margin: 0 210px 0;
     padding: 40px 0;
     color: #333333;
     .main-content {
-      height: 700px;
+      height: 946px;
       width: 700px;
       .mypage-user {
         background-color: khaki;
         height: 200px;
         .mypage-user__box {
           height: 111px;
-          padding: 44px 0;
+          padding: 70px 0;
           .mypage-user__icon {
-            background-image: url('member_photo_noimage_thumbのコピー.png');
+            background-image: url('member_photo_noimage_thumb.png');
             height: 60px;
             width: 60px;
             margin: 0 320px;
@@ -27,13 +25,34 @@
           }
           .mypage-user__name {
             text-align: center;
-            font-size: 14px;
+            font-size: 25px;
+            font-weight: bold;
             margin-top: 8px;
           }
           .mypage-user__number {
             text-align: center;
             font-size: 14px;
             margin-top: 8px;
+          }
+        }
+      }
+      
+      .mypage-tab-box2 {
+        height: 382px;
+        .mypage-tab-box2__head {
+          background-color: #fafafa;
+          line-height: 72px;
+          font-size: 16px;
+          font-weight: bold;
+          padding: 0 16px;
+        }
+        .mypage-tab-box2__content {
+          .mypage-item__not-found {
+            background-color: #ffffff;
+            padding: 110px 0;
+            font-weight: bold;
+            color: #cccccc;
+            text-align: center;
           }
         }
       }
@@ -52,6 +71,10 @@
             font-size: 14px;
             padding: 0 16px;
             position: relative;
+            .hoge {
+              text-decoration: none;
+              color: #333333;
+            }
             .fa-chevron-right {
               position: absolute;
               top: 17px;
