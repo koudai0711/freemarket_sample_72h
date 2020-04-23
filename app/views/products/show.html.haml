@@ -75,7 +75,7 @@
                      %li.purchaseBtn
                         = link_to "商品を購入する", buy_product_path, class: "pBtn"
             .optionalArea2
-            - if user_signed_in? && current_user.id == @product.buyer_id
+            - if user_signed_in? && current_user.id == @product.prefecture_id
                %ul.edit
                   %li.editBtn
                      = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"
