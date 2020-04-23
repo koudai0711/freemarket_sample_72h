@@ -7,11 +7,11 @@
 
   %main.single-main
     %section.l-single-container
-      %h2 会員登録
+      %h2.l-single-container__v 会員登録
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
 
-        .l-single-content
+        .l-single-container__v_a
           .field
             = f.label :nickname, 'ニックネーム', class: 'signup-label'
             %span.form-require 必須
@@ -36,83 +36,81 @@
             %br/
             = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-box", placeholder: "確認用"
 
-          本人確認情報
+          .title
+            本人確認情報
           .field
-            .signup-label
-              お名前（全角）
+            = f.label :last_name, 'お名前（全角）', class: 'signup-label'
             %span.form-require 必須
             %br/
-            = f.text_field :last_name, autofocus: true, class: "form-box", placeholder: "例）山田"
-            = f.text_field :first_name, autofocus: true, class: "form-box", placeholder: "例）太郎"
+            = f.text_field :last_name, autofocus: true, class: "form-box_a", placeholder: "例）山田"
+            = f.text_field :first_name, autofocus: true, class: "form-box_a", placeholder: "例）太郎"
 
         
           .field
-            .signup-label
-              フリガナ（全角）
+            = f.label :last_name_kana, 'フリガナ（全角）', class: 'signup-label'
             %span.form-require 必須
             %br/
-            = f.text_field :last_name_kana, autofocus: true, class: "form-box", placeholder: "例）ヤマダ"
-            = f.text_field :first_name_kana, autofocus: true, class: "form-box", placeholder: "例）タロウ"
+            = f.text_field :last_name_kana, autofocus: true, class: "form-box_a", placeholder: "例）ヤマダ"
+            = f.text_field :first_name_kana, autofocus: true, class: "form-box_a", placeholder: "例）タロウ"
 
           .field
             = f.label :birth_day, '生年月日', class: 'birth_day' 
             %span.form-require 必須
             %br/
-            = f.date_select :birth_day, {prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900}, {class: 'birth_day'}
+            = f.date_select :birth_day, {prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1900}, {class: 'form-box_b'}
 
           = f.fields_for :addresses do |k|
-            商品送付先住所
+            .title
+              商品送付先住所
             .field
-              .signup-label
-                お名前（全角）
+              = f.label :address_last_name, 'お名前（全角）', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.text_field :address_last_name, autofocus: true, class: "form-box", placeholder: "例）山田"
-              = k.text_field :address_first_name, autofocus: true, class: "form-box", placeholder: "例）太郎"
+              = k.text_field :address_last_name, autofocus: true, class: "form-box_a", placeholder: "例）山田"
+              = k.text_field :address_first_name, autofocus: true, class: "form-box_a", placeholder: "例）太郎"
 
             .field
-              .signup-label
-                フリガナ（全角）
+              = f.label :address_last_name, 'フリガナ（全角）', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.text_field :address_last_name_kana, autofocus: true, class: "form-box", placeholder: "例）ヤマダ"
-              = k.text_field :address_first_name_kana, autofocus: true, class: "form-box", placeholder: "例）タロウ"
+              = k.text_field :address_last_name_kana, autofocus: true, class: "form-box_a", placeholder: "例）ヤマダ"
+              = k.text_field :address_first_name_kana, autofocus: true, class: "form-box_a", placeholder: "例）タロウ"
 
             .field
               = k.label :postal_code, '郵便番号', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.text_field :postal_code, placeholder: '郵便番号 例：000-0000', class: 'postal_code'
+              = k.text_field :postal_code, placeholder: '郵便番号 例：000-0000', class: 'form-box'
 
             .field
               = k.label :prefecture_id, '都道府県', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :name), {}, {class: 'prefecture'}
+              = k.select :prefecture_id, options_from_collection_for_select(Prefecture.all, :id, :name), {prompt:"--"}, {class: 'form-box'}
 
             .field
               = k.label :city, '市区町村', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.text_field :city, placeholder: '市区町村', class: 'city'
+              = k.text_field :city, placeholder: '市区町村', class: 'form-box'
             
             .field
               = k.label :house_number, '番地', class: 'signup-label'
               %span.form-require 必須
               %br/
-              = k.text_field :house_number, placeholder: '番地', class: 'house_number'
+              = k.text_field :house_number, placeholder: '番地', class: 'form-box'
             
             .field
               = k.label :building_name, 'マンションやビル名、部屋番号', class: 'signup-label'
-              %span.optional-icon 任意
+              %span.form-require 任意
               %br
-              = k.text_field :building_name, placeholder: 'マンションやビル名、部屋番号', class: 'building_name'
+              = k.text_field :building_name, placeholder: 'マンションやビル名、部屋番号', class: 'form-box'
             
             .field
               = k.label :phone_number, '電話番号', class: 'signup-label'
-              %span.optional-icon 任意
+              %span.form-require 任意
               %br
-              = k.text_field :phone_number, placeholder: '電話番号', class: 'phone_number'
+              = k.text_field :phone_number, placeholder: '電話番号', class: 'form-box'
 
         .actions
           = f.submit "Sign up"
