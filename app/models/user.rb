@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_many :addresses, dependent: :destroy
   accepts_nested_attributes_for :addresses
+  
 
   validates :nickname, :birth_day, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
