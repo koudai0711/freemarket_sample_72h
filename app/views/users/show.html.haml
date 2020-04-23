@@ -7,54 +7,15 @@
         .mypage-user__box
           .mypage-user__icon
           .mypage-user__name
-            kuku
+            = "#{current_user.nickname}"
           .mypage-user__number
             評価 0 出品数 0
-      .mypage-tab-box1
-        .mypage-tab-box1__tabs
-          .a-active
-            お知らせ
-          .a
-            やることリスト
-        .mypage-tab-box1__content
-          .mypage-item__link
-            .figure
-            .mypage-item__body
-              .mypage-item__text
-                事務局から個別メッセージ「ログイン」
-                .time
-                  6日前
-            %i.fas.fa-chevron-right
-          .mypage-item__link
-            .figure
-            .mypage-item__body
-              .mypage-item__text
-                事務局から個別メッセージ「ログイン」
-                .time
-                  6日前
-            %i.fas.fa-chevron-right
-          .mypage-go-ichiran
-            .mypage-go-ichiran__btn
-              一覧を見る
-
-      .mypage-tab-box2
-        .mypage-tab-box2__head
-          購入した商品
-        .mypage-tab-box2__tabs
-          .a-active
-            取引中
-          .a
-            過去の取引
-        .mypage-tab-box2__content
-          .mypage-item__not-found
-            取引中の商品がありません
-
 
     .left-content
       .mypage-nav
         .mypage-nav__list
           .mypage-nav__list-item
-            マイページ
+            = link_to "マイページ", user_path(current_user)
             %i.fas.fa-chevron-right
           
         .mypage-nav__title
@@ -64,7 +25,7 @@
             支払い方法
             %i.fas.fa-chevron-right
           .mypage-nav__list-item
-            ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
             %i.fas.fa-chevron-right
 
   = render "layouts/footer"

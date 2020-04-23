@@ -8,7 +8,7 @@
     padding: 40px 0;
     color: #333333;
     .main-content {
-      height: 946px;
+      height: 500px;
       width: 700px;
       .mypage-user {
         background-color: khaki;
@@ -34,105 +34,6 @@
             text-align: center;
             font-size: 14px;
             margin-top: 8px;
-          }
-        }
-      }
-      .mypage-tab-box1 {
-        height: 324px;
-        .mypage-tab-box1__tabs {
-          display: flex;
-          .a-active {
-            background-color: #ffffff;
-            line-height: 74px;
-            width: 350px;
-            font-weight: bold;
-            text-align: center;
-            border-top: solid #3ccace 2px;
-          }
-          .a {
-            background-color: #eee;
-            line-height: 74px;
-            width: 350px;
-            font-weight: bold;
-            text-align: center;
-          }
-        }
-        .mypage-tab-box1__content {
-          .mypage-item__link {
-            padding: 16px;
-            background-color: #ffffff;
-            border-bottom: solid #eee 1px;
-            position: relative;
-            .figure {
-              background-color: #3cca;
-              height: 48px;
-              width: 48px;
-              position: absolute;
-              top: 16px;
-              left: 16px;
-            }
-            .mypage-item__body {
-              font-size: 14px;
-              margin: 0 40px 0 68px;
-              .time {
-                color: #888888;
-              }
-            }
-            .fa-chevron-right {
-              position: absolute;
-              top: 30px;
-              right: 16px;
-            }
-          }
-          .mypage-go-ichiran {
-            background-color: #ffffff;
-            // height: 88px;
-            padding: 16px;
-            .mypage-go-ichiran__btn {
-              background-color: #eeeeee;
-              line-height: 56px;
-              width: 668px;
-              font-size: 14px;
-              text-align: center;
-            }
-          }
-        }
-      }
-      .mypage-tab-box2 {
-        height: 382px;
-        margin-top: 40px;
-        .mypage-tab-box2__head {
-          background-color: #fafafa;
-          line-height: 72px;
-          font-size: 16px;
-          font-weight: bold;
-          padding: 0 16px;
-        }
-        .mypage-tab-box2__tabs {
-          display: flex;
-          .a-active {
-            background-color: #ffffff;
-            line-height: 74px;
-            width: 350px;
-            font-weight: bold;
-            text-align: center;
-            border-top: solid #3ccace 2px;
-          }
-          .a {
-            background-color: #eee;
-            line-height: 74px;
-            width: 350px;
-            font-weight: bold;
-            text-align: center;
-          }
-        }
-        .mypage-tab-box2__content {
-          .mypage-item__not-found {
-            background-color: #ffffff;
-            padding: 110px 0;
-            font-weight: bold;
-            color: #cccccc;
-            text-align: center;
           }
         }
       }
