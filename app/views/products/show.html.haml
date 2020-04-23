@@ -27,6 +27,7 @@
                   %tr
                   %th 出品者
                   %td 
+                     = User.find(@product.saler_id).nickname
                   %tr
                   %th カテゴリー
                   %td
@@ -41,7 +42,7 @@
                      = @product.brand
                   %tr
                   %th 商品のサイズ
-                  %td
+                  %td 
                      = @product.size
                   %tr
                   %th 商品の状態
@@ -71,11 +72,12 @@
 
             .purchaseArea 
                - if user_signed_in?
-                  %ul.purchase
-                     %li.purchaseBtn
-                        = link_to "商品を購入する", buy_product_path, class: "pBtn"
+                  - unless @product.buyer_id
+                     %ul.purchase
+                        %li.purchaseBtn
+                           = link_to "商品を購入する", buy_product_path, class: "pBtn"
             .optionalArea2
-            - if user_signed_in? && current_user.id == @product.prefecture_id
+            - if user_signed_in? && current_user.id == @product.buyer_id
                %ul.edit
                   %li.editBtn
                      = link_to "商品を編集する", edit_product_path(@product.id), class: "eBtn"

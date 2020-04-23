@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
     @address = Prefecture.all
+
     4.times { @product.images.build}
   end
 
@@ -68,12 +69,13 @@ class ProductsController < ApplicationController
 
   def show
     @image = Image.where(product_id: params[:id])
+    @users = User.where(product_id: params[:id])
   end
 
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, :category_id, images_attributes: [:src])
+    params.require(:product).permit(:name, :price, :description, :brand, :status, :size, :shipping_cost, :prefecture_id, :shipping_days, :buyer_id, :saler_id, :category_id, images_attributes: [:src]).merge(saler_id: current_user.id)
   end
 
   def set_product

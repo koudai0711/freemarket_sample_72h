@@ -5,8 +5,9 @@ class Product < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true, reject_if: proc { |attributes| attributes['src'].blank? }
 
-  belongs_to :saler, class_name: "User"
+  belongs_to :saler, class_name: "User", optional: true
   belongs_to :buyer, class_name: "User"
+  belongs_to :user, optional: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
