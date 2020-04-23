@@ -52,7 +52,7 @@
           }
         }
         .button-class {
-          position: relative;
+          // position: relative;
           button{
             display: block;
             width: 100%;
@@ -64,11 +64,11 @@
             border: 1px solid #3CCACE;
             color: white;
           }
-          .actions {
-            position: absolute;
-            top: 20px;
-            left: 150px;
-          }
+          // .actions {
+            // position: absolute;
+            // top: 20px;
+            // left: 150px;
+          // }
         }
       }
     }
