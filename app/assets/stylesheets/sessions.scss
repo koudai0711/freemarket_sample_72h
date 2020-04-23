@@ -51,28 +51,33 @@
             font-size: 16px;
           }
         }
-        .button-class {
-          position: relative;
-          button{
-            display: block;
-            width: 100%;
-            line-height: 48px;
-            font-size: 14px;
-            text-align: center;
-            margin: 60px 0 0;
-            background: #3CCACE;
-            border: 1px solid #3CCACE;
-            color: white;
-          }
-          .actions {
-            display: none;
-            position: absolute;
-            top: 20px;
-            left: 150px;
-            display: none;
-          }
-        }
       }
     }
   }
+}
+.button-class {
+  position: relative;
+  button{
+    display: block;
+    width: 40%;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+    margin: 40px auto 30px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: white;
+    border-radius: 4px;
+    color: white;
+  }
+  .actions {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    display: none;
+  }
+}
+a{
+  display: none;
 }
