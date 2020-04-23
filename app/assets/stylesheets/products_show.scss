@@ -9,7 +9,7 @@
     padding: 24px 40px 40px;
     width: 600px;
     margin: 0 auto;
-    height: 1320px;
+    height: 100%;
     text-align: center;
     &__productName {
       font-weight: bold;
@@ -21,7 +21,7 @@
       margin-top: 20px;
       object-fit: cover;
       .img1 {
-        height: 300px;
+        height: 220px;
       }
       &__small {
         display: flex;
@@ -37,63 +37,19 @@
         }
       }
     }
-    .main__content-price {
-      margin: 24px 0 24px;
-      .content-price-sellingPrice {
-        font-size: 46px;
-        font-weight: bold;
-        margin: 0 10px 0 0;
+    &__price {
+      margin: 24px 0 24px; 
+      &__sellingPrice {
+      font-size: 46px;
+      font-weight: bold;
+      margin: 0 10px 0 0;
       }
-      .content-price-tax {
+      &__tax {
         font-size: 16px;
-        &__price {
-        margin: 24px 0 24px; 
-        &__sellingPrice {
-          font-size: 46px;
-          font-weight: bold;
-          margin: 0 10px 0 0;
-          }
-          &__tax {
-            font-size: 16px;
-          }
-        }
-        &__description {
-          &__top {
-            line-height: 1.5;
-            font-size: 18px;
-            margin-bottom: 30px;
-          }
-        }
-        table {
-          margin-top: 20px;
-          width: 100%;
-          height: 375px;
-          border-collapse: collapse;
-          border: 1px solid #f8f8f8;
-          tbody {
-            tr {
-              th {
-                width: 20%;
-                background-color: #eee;
-                font-weight: 400;
-                padding: 8px;
-                border: 1px solid #dedede;
-                font-size: 14px;
-                text-align: center;
-              }
-              td {
-                width: 61%;
-                padding: 15px 15px;
-                border: 1px solid #dedede;
-                font-size: 14px;
-              }
-            }
-          }
-        } 
       }
     }
-    .main__content-description {
-      .content-description-top {
+    &__description {
+      &__top {
         line-height: 1.5;
         font-size: 18px;
         margin-bottom: 30px;
@@ -102,24 +58,24 @@
           width: 100%;
           height: 375px;
           border-collapse: collapse;
-          border: 1px solid #F8F8F8;
+          border: 1px solid #f8f8f8;
           tbody {
             tr {
-              th {
-                width: 20%;
-                background-color: #eee;
-                font-weight: 400;
-                padding: 8px;
-                border: 1px solid #DEDEDE;
-                font-size: 14px;
-                text-align: center;
-              }
-              td {
-                width: 61%;
-                padding: 15px 15px;
-                border: 1px solid #DEDEDE;
-                font-size: 14px;
-              }
+            }
+            th {
+              width: 20%;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 8px;
+              border: 1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+            }
+            td {
+              width: 61%;
+              padding: 15px 15px;
+              border: 1px solid #dedede;
+              font-size: 14px;
             }
           }
         }
@@ -238,23 +194,23 @@
         min-height: 104px;
         padding: 10px;
       }
-    }
-    .noticeMsg {
-      padding: 8px;
-      font-size: 14px;
-      background-color: #f8f8f8;
-      margin: 10px 0;
-      text-align: left;
-    }
-    .commentBtn {
-      font-size: 18px;
-      line-height: 48px;
-      background: #3CCACE;
-      border: 1px solid #3CCACE;
-      color: #fff;
-      width: 60%;
-      font-size: 18px;
-      border-radius: 100px;
+      .noticeMsg {
+        padding: 8px;
+        font-size: 14px;
+        background-color: #f8f8f8;
+        margin: 10px 0;
+        text-align: left;
+      }
+      .commentBtn {
+        font-size: 18px;
+        line-height: 48px;
+        background: #3CCACE;
+        border: 1px solid #3CCACE;
+        color: #fff;
+        width: 60%;
+        font-size: 18px;
+        border-radius: 100px;
+      }
     }
   }
   .links {
