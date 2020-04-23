@@ -22,7 +22,7 @@
           設定
         .mypage-nav__list
           .mypage-nav__list-item
-            支払い方法
+            = link_to "支払い方法", "/cards/new"
             %i.fas.fa-chevron-right
           .mypage-nav__list-item
             = link_to "ログアウト", destroy_user_session_path, method: :delete
