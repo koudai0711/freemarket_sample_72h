@@ -12,12 +12,13 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
-    if @product.save
+    # binding.pry
+    unless @product.images.empty?
+      @product.save
       redirect_to root_path
     else
-      @product.images.new
-      render :new
+      # @product.images.new
+      redirect_to new_product_path
     end
   end
 
