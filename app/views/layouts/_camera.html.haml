@@ -1,7 +1,11 @@
 
 .footer_camera
   .footer_camera_btn
-    = link_to new_product_path do
-      出品する
+    - if user_signed_in?
+      = link_to new_product_path do
+        出品する
+    - else
+      = link_to new_user_session_path do
+        出品する
   %span
     = image_tag asset_path("/images/icon_camera.png"), class: "icon-camera"
