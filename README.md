@@ -1,27 +1,63 @@
-# README
+## トップページ
+![d0efe378eda9f6608079a1034194a44e](https://user-images.githubusercontent.com/61679701/81924270-dd567100-9619-11ea-9c2d-8e364855e3ab.gif)
+## 商品ページ
+![0ebb673703451d901c5b3f8e1d021a84](https://user-images.githubusercontent.com/61679701/81925164-1ba06000-961b-11ea-8bcb-6bec9f443aea.gif)
+## 出品ページ
+![e9a9994103827797089cffce408c5dc3](https://user-images.githubusercontent.com/61679701/81925335-53a7a300-961b-11ea-95d1-8c47cc1fc3bb.gif)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション情報
+### アプリケーション概要
+フリーマーケットのアプリケーションを作成しました。
+### 接続先情報
+##### URL http://18.179.144.39/
+##### ID/Pass
+  ID: 1111<br>
+Pass: 2222<br>
+### テスト用アカウント等
+##### 購入者用
+メールアドレス: buyer_user@gmail.com<br>
+パスワード: bbbbbbb<br>
+購入用カード情報<br>
+番号：4242424242424242<br>
+期限：12/20<br>
+セキュリティコード：123<br>
+##### 出品者用
+メールアドレス名: seller_user@gmail.com<br>
+パスワード: sssssss<br>
+## 機能一覧
+ユーザー新規登録、ログイン機能<br>
+商品出品機能<br>
+商品購入機能<br>
+商品のカテゴリー登録、表示機能<br>
+商品の詳細表示機能<br>
+出品した商品の編集、削除機能<br>
 
-Things you may want to cover:
+## 開発環境
+Ruby 2.5.1<br>
+Ruby on Rails 5.4.2 <br>
+MySQL 14.14<br>
+Github<br>
+AWS (EC2, S3)<br>
+Capistranoによる自動デプロイ<br>
+Visual Studio Code<br>
 
-* Ruby version
+## 開発期間と平均作業時間
+開発期間：約4週間<br>
+1日あたりの平均作業時間：約9時間<br>
+開発体制<br>
+人数：4人<br>
+アジャイル型開発（スクラム）<br>
+Trelloによるタスク管理<br>
+## 動作確認方法
+Chromeの最新版を利用してアクセスしてください。<br>
+ただしデプロイ等で接続できないタイミングもございます。その際は少し時間をおいてから接続ください。<br>
+接続先およびログイン情報については、上記の通りです。<br>
+同時に複数の方がログインしている場合に、ログインできない可能性がございます。<br><br>
 
-* System dependencies
+テストアカウントでログイン→トップページから出品ボタン押下→商品情報入力→商品出品<br>
+テストアカウントでログイン→トップページから商品検索→商品選択→商品購入<br>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+確認後、ログアウト処理をお願いします。
 
 ## usersテーブル
 |Column|Type|Options|
